@@ -4,8 +4,13 @@ import { prefixLink } from 'gatsby-helpers'
 import Helmet from "react-helmet"
 import { config } from 'config'
 import Background from 'components/Background'
+import Intro from 'components/Intro'
+import SetInnerHTML from 'components/SetInnerHTML'
+import Section from 'components/Section'
+import intro from './_texte/intro.md'
+import ponyhof from './_texte/ponyhof.md'
 
-export default function Index() {
+export default function Index({ route }) {
     return (
         <div>
             <Helmet
@@ -15,10 +20,12 @@ export default function Index() {
                 ]}
             />
             <Background />
-            <h1>
-                Hello World!
-            </h1>
-            <p>Welcome to your old clean Gatsby site</p>
+            <Section title={intro.title}>
+                <SetInnerHTML body={intro.body} />
+            </Section>
+            <Section title={ponyhof.title}>
+                <SetInnerHTML body={ponyhof.body} />
+            </Section>
         </div>
     )
 }
