@@ -1,0 +1,28 @@
+{
+  "name": "gatsby-bare-starter",
+  "description": "Gatsby bare starter",
+  "version": "1.0.0",
+  "author": "Timur Celikel <me@timurcelikel.com>",
+  "dependencies": {
+    "front-matter": "^2.1.2",
+    "gatsby": "^0.12.39",
+    "markdown-it": "^8.3.1",
+    "markdown-it-abbr": "^1.0.3",
+    "markdown-it-attrs": "^0.8.0",
+    "markdown-it-deflist": "^2.0.1",
+    "markdown-it-footnote": "^3.0.1",
+    "markdown-it-sub": "^1.0.0",
+    "object-assign": "^4.1.0",
+    "react-helmet": "^5.0.2"
+  },
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "MIT",
+  "main": "n/a",
+  "scripts": {
+    "build": "gatsby build",
+    "start": "gatsby develop",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
