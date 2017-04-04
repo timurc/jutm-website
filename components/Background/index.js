@@ -1,5 +1,6 @@
 import React from 'react';
 import style from './style.module.less';
+import Section from 'components/Section';
 import {Track, TrackedDiv, TrackDocument} from 'react-track';
 import {tween, combine} from 'react-imation';
 import {topTop,
@@ -20,7 +21,6 @@ export default class Background extends React.Component {
     render() {
         return (
             <div className={style.container}>
-                huuu
             </div>
         )
     }
