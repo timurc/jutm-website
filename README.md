@@ -1,3 +1,2 @@
-# Gatsby Bare Starter
----
-Starter with fewer dependencies you might not need.
+# Website für Jona und die Tiefseemonster
+Benutzt Gatsby.js
