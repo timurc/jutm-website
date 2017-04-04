@@ -10,8 +10,7 @@ export default function Index() {
             <Helmet
                 title={config.siteTitle}
                 meta={[
-                    { "name": "description", "content": "Sample" },
-                    { "name": "keywords", "content": "sample, something" },
+                    { "name": "description", "content": config.siteTitle }
                 ]}
             />
             <h1>
