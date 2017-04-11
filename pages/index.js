@@ -20,9 +20,9 @@ export default function Index({ route }) {
                 ]}
             />
             <Background />
-            <Section title={intro.title}>
-                <SetInnerHTML body={intro.body} />
-            </Section>
+            <Intro title={intro.title}>
+                Auf der Suche nach den Tränen der Meerjungfrauen
+            </Intro>
             <Section title={ponyhof.title}>
                 <SetInnerHTML body={ponyhof.body} />
             </Section>
