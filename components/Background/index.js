@@ -30,7 +30,6 @@ export default class Background extends React.Component {
                     <Track component="div" 
                             formulas={[topTop, bottomTop]}>
                         {(Div, posTopBottom, posBottomTop) => {
-                            console.log(scrollY, posTopBottom, posBottomTop)
                             return (
                                 <Div  className={style.container}>
                                     <div style={tween(scrollY, [
