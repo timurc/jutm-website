@@ -12,16 +12,39 @@ import {topTop,
         getDocumentRect,
         getDocumentElement,
         calculateScrollY} from 'react-track/tracking-formulas';
+import {rgb, rgba, scale, rotate,
+        px, percent, translate3d} from 'react-imation/tween-value-factories';
 
 export default class Background extends React.Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
     }
 
     render() {
         return (
-            <div className={style.container}>
-            </div>
+            <TrackDocument formulas={[getDocumentElement, getDocumentRect, calculateScrollY,
+                               topTop, topBottom, topCenter, centerCenter, bottomBottom,
+                               bottomTop]}>
+                {(documentElement, documentRect, scrollY, topTop,
+                topBottom, topCenter, centerCenter, bottomBottom, bottomTop) =>
+                    <Track component="div" 
+                            formulas={[topTop, bottomTop]}>
+                        {(Div, posTopBottom, posBottomTop) => {
+                            console.log(scrollY, posTopBottom, posBottomTop)
+                            return (
+                                <Div  className={style.container}>
+                                    <div style={tween(scrollY, [
+                                        [[posTopBottom], {transform: translate3d(0,0,0)}],
+                                        [[posBottomTop], {transform: translate3d(0,500,0)}]
+                                    ])} 
+                                    className={style.water} />
+                                </Div>
+                            )
+                        }
+                        }                 
+                    </Track>
+                }
+            </TrackDocument>
         )
     }
 }
