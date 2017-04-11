@@ -16,7 +16,8 @@
     "object-assign": "^4.1.0",
     "react-helmet": "^5.0.2",
     "react-imation": "^0.5.3",
-    "react-track": "^0.4.3"
+    "react-track": "^0.4.3",
+    "svg-inline-loader": "^0.7.1"
   },
   "keywords": [
     "gatsby"
