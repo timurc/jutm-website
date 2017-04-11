@@ -8,9 +8,10 @@ function Navigation ({ links }) {
         <nav className={style.container}>
             <ul className={style.list}>
                 {
-                    map(links, (link) => {
+                    map(links, (link, idx) => {
                         return (
-                            <li className={style.item}>
+                            <li className={style.item}
+                                    key={idx}>
                                 {link.title}
                             </li>
                         )
