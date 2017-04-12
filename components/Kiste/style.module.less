@@ -14,6 +14,10 @@
     margin-left: -(@width / 2);
     display: flex;
     align-items: center;
+    animation-duration: 10s;
+    animation-name: floatVertically;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
 }
 
 .kiste {
@@ -24,6 +28,10 @@
     width: @width;
     height: @height;
     position: absolute;
+    animation-duration: 5s;
+    animation-name: floatSideways;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
 }
 
 .schraube {
@@ -45,5 +53,33 @@
 
     to {
         transform: rotate(360deg);
+    }
+}
+
+@keyframes floatSideways {
+    0% {
+        transform: translateX((@width * .4));
+    }
+
+    50% {
+        transform: translateX(-(@width * .4));
+    }
+
+    100% {
+        transform: translateX((@width * .4));
+    }
+}
+
+@keyframes floatVertically {
+    0% {
+        transform: translateY((@width * .2));
+    }
+
+    50% {
+        transform: translateY(-(@width * .2));
+    }
+
+    100% {
+        transform: translateY((@width * .2));
     }
 }
