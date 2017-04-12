@@ -1,0 +1,17 @@
+@kiste: 'graphics/illustrations/kiste.gif';
+@schraube: 'graphics/illustrations/schraube.gif';
+
+@size: 10vh;
+
+.kiste {
+    background-image: url(@kiste);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: fixed;
+    bottom: 0;
+    height: 50vh;
+    width: @size;
+    left: 50%;
+    margin-left: -(@size / 2);
+}
