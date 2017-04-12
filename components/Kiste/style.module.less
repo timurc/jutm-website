@@ -1,17 +1,49 @@
 @kiste: 'graphics/illustrations/kiste.gif';
 @schraube: 'graphics/illustrations/schraube.gif';
 
-@size: 10vh;
+@ratio: .5571;
+@width: 10vh;
+@height: (@width / @ratio);
+
+.container {
+    position: fixed;
+    bottom: 0;
+    height: 50vh;
+    width: @width;
+    left: 50%;
+    margin-left: -(@width / 2);
+    display: flex;
+    align-items: center;
+}
 
 .kiste {
     background-image: url(@kiste);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    position: fixed;
-    bottom: 0;
-    height: 50vh;
+    width: @width;
+    height: @height;
+    position: absolute;
+}
+
+.schraube {
+    @size: (@width * .4);
+    background-image: url(@schraube);
+    background-size: cover;
+    height: @size;
     width: @size;
-    left: 50%;
-    margin-left: -(@size / 2);
+    position: absolute;
+    top: @height * .7;
+    left: @width * .3;
+    animation: schraube 2s linear infinite;
+}
+
+@keyframes schraube {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
 }

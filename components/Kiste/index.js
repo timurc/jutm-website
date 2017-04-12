@@ -5,7 +5,10 @@ import { map } from 'lodash'
 
 function Kiste ({ links }) {
     return (
-        <div className={style.kiste}>
+        <div className={style.container}>
+            <div className={style.kiste}>
+                <div className={style.schraube} />
+            </div>
         </div>
     )
 }
