@@ -6,14 +6,8 @@
 @height: (@width / @ratio);
 
 .container {
-    position: fixed;
-    bottom: 0;
-    height: 50vh;
     width: @width;
-    left: 50%;
-    margin-left: -(@width / 2);
-    display: flex;
-    align-items: center;
+    height: @height;
     animation-duration: 10s;
     animation-name: floatVertically;
     animation-iteration-count: infinite;
