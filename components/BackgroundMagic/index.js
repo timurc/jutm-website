@@ -13,7 +13,7 @@ export default class Background extends React.Component {
 
     render() {
         const waterStyle = {
-            transform: 'translate3d(0,' + (this.state.scroll / 2) +'px, 0)'
+            transform: 'translate3d(0,' + (this.state.scroll / -2) +'px, 0)'
         }
         return (
             <div className={style.container}
