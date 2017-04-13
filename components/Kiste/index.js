@@ -1,11 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router'
 import style from './style.module.less'
+import classnames from 'classnames'
 import { map } from 'lodash'
 
-function Kiste ({ links }) {
+function Kiste ({ links, className }) {
     return (
-        <div className={style.container}>
+        <div className={classnames(className, style.container)}>
             <div className={style.kiste}>
                 <div className={style.schraube} />
             </div>
