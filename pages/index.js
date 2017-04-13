@@ -10,8 +10,13 @@ import SetInnerHTML from 'components/SetInnerHTML'
 import Section from 'components/Section'
 import intro from './_texte/intro.md'
 import ponyhof from './_texte/ponyhof.md'
+import { filter, map } from 'lodash'
 
 export default function Index({ route }) {
+    const fishes = map(filter(route.pages, (page) => {
+        return page.path.indexOf('/_fische') === 0;
+    }), (page) => page.data);
+
     return (
         <div>
             <Helmet
@@ -21,7 +26,8 @@ export default function Index({ route }) {
                 ]}
             />
             <BackgroundMagic />
-            <Intro title={intro.title}>
+            <Intro title={intro.title}
+                    fishes={fishes}>
                 Auf der Suche nach den Tränen der Meerjungfrauen
             </Intro>
             <Section title={ponyhof.title}>
