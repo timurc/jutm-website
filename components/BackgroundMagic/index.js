@@ -26,13 +26,21 @@ export default class Background extends React.Component {
     }
 
     onScroll() {
-        this.setState({
-            scroll: this.getScrollPosition()
-        })
+        const scrollPosition = this.getScrollPosition();
+
+        if (this.shouldTransform(scrollPosition)) {
+            this.setState({
+                scroll: this.getScrollPosition()
+            })
+        }
     }
 
     getScrollPosition() {
         return typeof window === 'undefined' ? 0 : window.scrollY;
+    }
+
+    shouldTransform(scrollPosition) {
+        return this.waterEl.getBoundingClientRect().top > 0;
     }
 
     componentDidMount() {
