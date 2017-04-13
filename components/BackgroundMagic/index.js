@@ -27,7 +27,7 @@ export default class Background extends React.Component {
 
     onScroll() {
         const scrollPosition = this.getScrollPosition();
-        const threashold = window.innerHeight + 20;
+        const threashold = window.innerHeight * 3 + 20;
         
         if (threashold > scrollPosition) {
             this.setState({
