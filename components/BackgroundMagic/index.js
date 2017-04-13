@@ -5,21 +5,34 @@ import Section from 'components/Section';
 export default class Background extends React.Component {
     constructor(props) {
         super(props);
-        this.boundScroll = this.onScroll.bind(this)
+        this.boundScroll = this.onScroll.bind(this);
+        this.state = {
+            scroll: this.getScrollPosition()
+        };
     }
 
     render() {
+        const waterStyle = {
+            transform: 'translate3d(0,' + (this.state.scroll / 2) +'px, 0)'
+        }
         return (
             <div className={style.container}
                     ref={(c) => this.containerEl = c}>
                 <div className={style.water}
+                    style={waterStyle}
                     ref={(c) => this.waterEl = c} />
             </div>
         )
     }
 
     onScroll() {
-        this.waterEl.style.transform = 'translate3d(0,' + (window.scrollY / 2) +'px, 0)';
+        this.setState({
+            scroll: this.getScrollPosition()
+        })
+    }
+
+    getScrollPosition() {
+        return typeof window === 'undefined' ? 0 : window.scrollY;
     }
 
     componentDidMount() {
