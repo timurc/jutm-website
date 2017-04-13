@@ -1,0 +1,35 @@
+@import '~style/vars';
+
+@waveImg: 'components/Background/sea.gif';
+@waveHeight: 15px;
+@waveWidth: 500px;
+
+.container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    right: 0;
+    z-index: -1;
+}
+
+.water {
+    position: absolute;
+    top: 50vh;
+    height: 1000vh;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to bottom, @blue, black);
+
+    &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 100%;
+        top: -@waveHeight;
+        height: @waveHeight;
+        background-image: url(@waveImg);
+        background-position: center; 
+        background-size: @waveWidth @waveHeight;
+    }  
+}

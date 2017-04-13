@@ -4,6 +4,7 @@ import { prefixLink } from 'gatsby-helpers'
 import Helmet from "react-helmet"
 import { config } from 'config'
 import Background from 'components/Background'
+import BackgroundMagic from 'components/BackgroundMagic'
 import Intro from 'components/Intro'
 import SetInnerHTML from 'components/SetInnerHTML'
 import Section from 'components/Section'
@@ -19,7 +20,7 @@ export default function Index({ route }) {
                     { "name": "description", "content": config.siteTitle }
                 ]}
             />
-            <Background />
+            <BackgroundMagic />
             <Intro title={intro.title}>
                 Auf der Suche nach den Tränen der Meerjungfrauen
             </Intro>
