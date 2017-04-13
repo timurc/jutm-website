@@ -9,7 +9,8 @@ export default class Intro extends React.Component {
         super(props);
     }
     render() {
-        const { children } = this.props;
+        const { children, fishes } = this.props;
+        console.log('fishes', fishes)
 
         return (
             <div>
@@ -20,7 +21,9 @@ export default class Intro extends React.Component {
                         { children }
                     </div>
                 </section>
-                <Kiste />
+                <div className={style.kiste}>
+                    <Kiste />
+                </div>
             </div>
         )
     }
