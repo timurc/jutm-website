@@ -22,6 +22,7 @@ export default function HTML ({ body }) {
             <head>
                 <meta charSet="utf-8" />
                 <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+                <link rel="shortcut icon" href="/favicon.png" />
                 <meta
                     name="viewport"
                     content="width=device-width, initial-scale=1.0"
