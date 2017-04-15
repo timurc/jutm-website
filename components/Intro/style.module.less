@@ -1,12 +1,16 @@
 @import '~style/vars';
 
-.container {
-    min-height: 300vh;
+.top {
     display: flex;
     align-items: flex-start;
     justify-content: center;
     padding-top: 50vh;
     font-size: @fontSizeL;
+    min-height: 50vh;    
+}
+
+.container {
+    min-height: 300vh;    
 }
 
 .inner {
@@ -26,4 +30,17 @@
     position: fixed;
     top: 68vh;
     left: ~"calc(50vw - 5vh)";
+}
+
+.fish {
+    min-height: 50vh;
+    color: @fontColorSea;
+
+    &_image {
+        height: 200px;
+        width: 200px;
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
 }
