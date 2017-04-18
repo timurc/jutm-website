@@ -72,10 +72,12 @@ function Fish ({ fish }) {
     const fishStyle = { backgroundImage: 'url(' + url + ')' };
     return (
         <div className={style.fish}>
-            <div className={style.fish_image} style={fishStyle} />
-            <div className={style.fish_description}>
-                {fish.title}
-                <SetInnerHTML body={fish.body} />
+            <div className={style.fish_container}>
+                <div className={style.fish_image} style={fishStyle} />
+                <div className={style.fish_description}>
+                    {fish.title}
+                    <SetInnerHTML body={fish.body} />
+                </div>
             </div>
         </div>
     )

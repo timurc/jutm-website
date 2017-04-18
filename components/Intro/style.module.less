@@ -33,8 +33,20 @@
 }
 
 .fish {
-    min-height: 50vh;
     color: @fontColorSea;
+    display: flex;
+
+    &:nth-child(even) {
+        justify-content: flex-end;
+    }
+
+    &_container {
+        min-height: 50vh;
+        width: 33vw;
+        margin: 1rem;
+        display: flex;
+        flex-direction: column;
+    }
 
     &_image {
         height: 200px;
@@ -42,5 +54,6 @@
         background-size: contain;
         background-position: center;
         background-repeat: no-repeat;
+        align-self: center;
     }
 }
