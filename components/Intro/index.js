@@ -83,10 +83,12 @@ class Fish extends React.Component {
             <div className={classNames(style.fish, {[style.fish__active]: inView})}
                     ref={(c) => this.fishEl = c}>
                 <div className={style.fish_container}>
-                    <div className={style.fish_image} style={fishStyle} />
-                    <div className={style.fish_description}>
-                        {fish.title}
-                        <SetInnerHTML body={fish.body} />
+                    <div className={style.fish_container_inner}>
+                        <div className={style.fish_image} style={fishStyle} />
+                        <div className={style.fish_description}>
+                            {fish.title}
+                            <SetInnerHTML body={fish.body} />
+                        </div>
                     </div>
                 </div>
             </div>

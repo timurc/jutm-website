@@ -33,17 +33,22 @@
 }
 
 .fish {
-    @width: 33vw;
+    @width: @sectionWidth;
 
     color: @fontColorSea;
     display: flex;
+    justify-content: center;
     transition: 3s all;
 
     &:nth-child(even) {
-        justify-content: flex-end;
+        .fish_container {
+            justify-content: flex-end;
+        }
     }
 
     &:not(&__active) {
+        opacity: 0;
+
         &:nth-child(odd) {
             transform: translateX(-@width);
         }
@@ -52,12 +57,17 @@
         }
     }
 
-    &_container {
+    &_container_inner {
         min-height: 50vh;
         width: @width;
         margin: 1rem;
         display: flex;
         flex-direction: column;
+    }
+
+    &_container {
+        flex: 0 1 @width * 3;
+        display: flex;
     }
 
     &_image {
