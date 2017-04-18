@@ -14,7 +14,6 @@ const IMG_URL = 'graphics/illustrations/'
 export default class Intro extends React.Component {
     constructor(props) {
         super(props);
-
         this.boundScroll = this.onScroll.bind(this);
         this.state = {
             scroll: this.getScrollPosition()
@@ -22,6 +21,7 @@ export default class Intro extends React.Component {
     }
     render() {
         const { children, fishes } = this.props;
+        const kisteAtBottom = isAtBottom(this.containerEl, this.state.scroll);
 
         return (
             <div ref={(c) => this.containerEl = c}
@@ -41,7 +41,8 @@ export default class Intro extends React.Component {
                         )
                     })
                 }
-                <div className={style.kiste}>
+                <div className={classNames(style.kiste, {[style.kiste__bottom]: kisteAtBottom})}
+                        ref={(c) => this.kisteEl = c}>
                     <Kiste />
                 </div>
             </div>
@@ -99,5 +100,11 @@ class Fish extends React.Component {
 function isInView(el, scrollPosition) {
     if (el) {
         return el.offsetTop < (scrollPosition + window.innerHeight);
+    }
+}
+
+function isAtBottom(el, scrollPosition) {
+    if (el) {
+        return (el.offsetTop + el.offsetHeight) < (scrollPosition + window.innerHeight);
     }
 }

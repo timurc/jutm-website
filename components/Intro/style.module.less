@@ -10,7 +10,8 @@
 }
 
 .container {
-    min-height: 300vh;    
+    min-height: 300vh;
+    position: relative;
 }
 
 .inner {
@@ -28,8 +29,12 @@
 
 .kiste {
     position: fixed;
-    top: 68vh;
+    bottom: 12vh;
     left: ~"calc(50vw - 5vh)";
+
+    &__bottom {
+        position: absolute;
+    }
 }
 
 .fish {
