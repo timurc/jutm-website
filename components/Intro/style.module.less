@@ -33,16 +33,28 @@
 }
 
 .fish {
+    @width: 33vw;
+
     color: @fontColorSea;
     display: flex;
+    transition: 3s all;
 
     &:nth-child(even) {
         justify-content: flex-end;
     }
 
+    &:not(&__active) {
+        &:nth-child(odd) {
+            transform: translateX(-@width);
+        }
+        &:nth-child(even) {
+            transform: translateX(@width);
+        }
+    }
+
     &_container {
         min-height: 50vh;
-        width: 33vw;
+        width: @width;
         margin: 1rem;
         display: flex;
         flex-direction: column;

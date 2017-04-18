@@ -5,6 +5,7 @@ import logo from '!svg-inline-loader!graphics/logo.svg';
 import { map } from 'lodash';
 import Kiste from 'components/Kiste';
 import SetInnerHTML from 'components/SetInnerHTML'
+import classNames from 'classnames';
 
 import fisch from 'graphics/illustrations/fisch1.png'
 
@@ -35,6 +36,7 @@ export default class Intro extends React.Component {
                 { map(fishes, (fish, idx) => {
                         return (
                             <Fish fish={fish}
+                                    scrollPosition={this.state.scroll}
                                 key={idx} />
                         )
                     })
@@ -48,6 +50,9 @@ export default class Intro extends React.Component {
 
     onScroll() {
         const scrollPosition = this.getScrollPosition();
+        this.setState({
+            scroll: scrollPosition
+        })
     }
 
     getScrollPosition() {
@@ -67,18 +72,30 @@ export default class Intro extends React.Component {
     }
 }
 
-function Fish ({ fish }) {
-    const url = require('graphics/illustrations/' + fish.image)
-    const fishStyle = { backgroundImage: 'url(' + url + ')' };
-    return (
-        <div className={style.fish}>
-            <div className={style.fish_container}>
-                <div className={style.fish_image} style={fishStyle} />
-                <div className={style.fish_description}>
-                    {fish.title}
-                    <SetInnerHTML body={fish.body} />
+class Fish extends React.Component {
+    render() {
+        const { fish, scrollPosition } = this.props;
+        const url = require('graphics/illustrations/' + fish.image);
+        const fishStyle = { backgroundImage: 'url(' + url + ')' };
+        const inView = isInView(this.fishEl, scrollPosition);
+
+        return (
+            <div className={classNames(style.fish, {[style.fish__active]: inView})}
+                    ref={(c) => this.fishEl = c}>
+                <div className={style.fish_container}>
+                    <div className={style.fish_image} style={fishStyle} />
+                    <div className={style.fish_description}>
+                        {fish.title}
+                        <SetInnerHTML body={fish.body} />
+                    </div>
                 </div>
             </div>
-        </div>
-    )
+        )
+    }
+}
+
+function isInView(el, scrollPosition) {
+    if (el) {
+        return el.offsetTop < (scrollPosition + window.innerHeight);
+    }
 }
