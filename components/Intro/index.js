@@ -2,7 +2,7 @@ import React from 'react';
 import style from './style.module.less';
 import SVGinline from 'components/SVGinline';
 import logo from '!svg-inline-loader!graphics/logo.svg';
-import { map } from 'lodash';
+import { map, forEach } from 'lodash';
 import Kiste from 'components/Kiste';
 import SetInnerHTML from 'components/SetInnerHTML'
 import classNames from 'classnames';
@@ -15,6 +15,8 @@ export default class Intro extends React.Component {
     constructor(props) {
         super(props);
         this.boundScroll = this.onScroll.bind(this);
+        this.fishEls = [];
+
         this.state = {
             scroll: this.getScrollPosition()
         };
@@ -22,6 +24,7 @@ export default class Intro extends React.Component {
     render() {
         const { children, fishes } = this.props;
         const kisteAtBottom = isAtBottom(this.containerEl, this.state.scroll);
+        const raiseArm = shouldRaiseArm(this.kisteEl, this.fishEls, this.state.scroll);
 
         return (
             <div ref={(c) => this.containerEl = c}
@@ -35,15 +38,16 @@ export default class Intro extends React.Component {
                 </section>
                 { map(fishes, (fish, idx) => {
                         return (
-                            <Fish fish={fish}
-                                    scrollPosition={this.state.scroll}
-                                key={idx} />
+                                <Fish fish={fish}
+                                    ref={(c) => this.fishEls[idx] = c}
+                                    key={idx}
+                                    scrollPosition={this.state.scroll} />
                         )
                     })
                 }
                 <div className={classNames(style.kiste, {[style.kiste__bottom]: kisteAtBottom})}
                         ref={(c) => this.kisteEl = c}>
-                    <Kiste />
+                    <Kiste raiseArm={shouldRaiseArm(this.kisteEl, this.fishEls, this.state.scroll)}/>
                 </div>
             </div>
         )
@@ -106,5 +110,24 @@ function isInView(el, scrollPosition) {
 function isAtBottom(el, scrollPosition) {
     if (el) {
         return (el.offsetTop + el.offsetHeight) < (scrollPosition + window.innerHeight);
+    }
+}
+
+function shouldRaiseArm(kiste, fishes, scrollTop) {
+    if (kiste) {
+        const centerKiste = scrollTop + kiste.offsetTop + (kiste.offsetHeight / 2);
+        let raise = undefined;
+
+        forEach(fishes, (fish, idx) => {
+            const el = fish.fishEl;
+            const top = el.offsetTop;
+            const bottom = top + el.offsetHeight;
+            if (top < centerKiste && bottom > centerKiste) {
+                raise = idx % 2 ? 'L' : 'R';
+                return false;
+            }
+        })
+
+        return raise;
     }
 }
