@@ -1,4 +1,6 @@
-@kiste: 'graphics/illustrations/kiste.gif';
+@kiste: 'graphics/illustrations/kiste_ohne_arme.gif';
+@arm_upper: 'graphics/illustrations/kiste_oberarm.gif';
+@arm_lower: 'graphics/illustrations/kiste_unterarm.gif';
 @schraube: 'graphics/illustrations/schraube.gif';
 
 @ratio: .5571;
@@ -20,10 +22,6 @@
 }
 
 .kiste {
-    background-image: url(@kiste);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
     width: @width;
     height: @height;
     position: absolute;
@@ -33,11 +31,24 @@
     animation-timing-function: ease-in-out;
 }
 
+.body {
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+
+    background-image: url(@kiste);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
 .schraube {
     width: 40%;
     position: absolute;
     top: 70%;
     left: 30%;
+    z-index: 1;
 
     &_inner {
         background-image: url(@schraube);
@@ -45,6 +56,49 @@
         animation: schraube 2s linear infinite;
         padding-bottom: 100%;
     }
+}
+
+.arm_container {
+    position: absolute;
+    width: 8%;
+    top: 64%;
+    z-index: 0;
+
+    &_r {
+        right: 12%;
+    }
+
+    &_l {
+        left: 12%;
+        transform: rotateY(180deg);
+    }
+}
+
+.arm {
+    width: 100%;
+    padding-bottom: 418.75%;
+    position: absolute;
+    background-image: url(@arm_upper);
+
+    &_r {
+    }
+
+    &_l {
+    }
+
+    &, &_lower {
+        background-size: cover;
+    }
+
+    &_lower {
+        position: absolute;
+        left: -17%;
+        top: 77%;
+        padding-bottom: 560%;
+        background-image: url(@arm_lower);
+        width: 192%;
+    }
+
 }
 
 @keyframes schraube {

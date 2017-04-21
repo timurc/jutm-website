@@ -8,8 +8,19 @@ function Kiste ({ links, className }) {
     return (
         <div className={classnames(className, style.container)}>
             <div className={style.kiste}>
+                <div className={style.body} />
                 <div className={style.schraube}>
                     <div className={style.schraube_inner} />
+                </div>
+                <div className={classnames(style.arm_container, style.arm_container_l)}>
+                    <div className={classnames(style.arm, style.arm_l)}>
+                        <div className={classnames(style.arm_l_lower, style.arm_lower)} />
+                    </div>
+                </div>
+                <div className={classnames(style.arm_container, style.arm_container_r)}>
+                    <div className={classnames(style.arm, style.arm_r)}>
+                        <div className={classnames(style.arm_l_lower, style.arm_lower)} />
+                    </div>
                 </div>
             </div>
         </div>
