@@ -3,6 +3,11 @@
 
 @ratio: .5571;
 @width: 10vh;
+
+@media (max-height: 500px) {
+    @width: 200px;
+}
+
 @height: (@width / @ratio);
 
 .container {
@@ -29,15 +34,17 @@
 }
 
 .schraube {
-    @size: (@width * .4);
-    background-image: url(@schraube);
-    background-size: cover;
-    height: @size;
-    width: @size;
+    width: 40%;
     position: absolute;
-    top: @height * .7;
-    left: @width * .3;
-    animation: schraube 2s linear infinite;
+    top: 70%;
+    left: 30%;
+
+    &_inner {
+        background-image: url(@schraube);
+        background-size: cover;
+        animation: schraube 2s linear infinite;
+        padding-bottom: 100%;
+    }
 }
 
 @keyframes schraube {
