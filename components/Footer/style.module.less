@@ -11,3 +11,28 @@
     flex: 0 1 (@sectionWidth * 3);
     padding: 2rem 1rem;
 }
+
+.columns {
+    p:first-child {
+        margin-top: 0;
+    }
+    
+    @media (min-width: (@sectionWidth * 2)) {
+        display: flex;
+        margin: -1rem;
+
+        > * {
+            margin: 1rem;
+            flex: 0 0 33.3%;
+        }
+    }
+}
+
+.links {
+    padding: 0;
+    list-style: none;
+
+    li {
+        margin: 0;
+    }
+}

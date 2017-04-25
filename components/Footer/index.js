@@ -4,15 +4,13 @@ import style from './style.module.less'
 import SetInnerHTML from 'components/SetInnerHTML'
 
 function Navigation ({ wissenschaftsjahr, wid }) {
-    console.log(wissenschaftsjahr)
-
     return (       
         <footer className={style.container}>
             <div className={style.inner}>
                 <div className={style.columns}>
                     <SetInnerHTML body={wissenschaftsjahr.body} />
                     <SetInnerHTML body={wid.body} />
-                    <ul>
+                    <ul className={style.links}>
                         <li>
                             <Link to="/kontakt">Kontakt</Link>
                         </li>
