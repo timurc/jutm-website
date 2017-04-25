@@ -14,13 +14,13 @@ import { filter, map } from 'lodash'
 const LINKS = [
     {
         title: 'Theaterstück',
-        href: '#'
+        to: 'beschreibung'
     }, {
         title: 'Künstler',
-        href: '#'
+        to: 'beschreibung'
     }, {
         title: 'Tourplan',
-        href: '#'
+        to: 'beschreibung'
     }
 ]
 
@@ -42,6 +42,7 @@ export default function Index({ route }) {
             <Intro fishes={fishes}>
                 Komm mit auf eine wagemutige Expedition
             </Intro>
+            <span id="beschreibung" />
             <Section title={theaterstuck.title}>
                 <SetInnerHTML body={theaterstuck.body} />
             </Section>

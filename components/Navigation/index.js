@@ -1,7 +1,7 @@
 import React from 'react'
-import { Link } from 'react-router'
 import style from './style.module.less'
 import { map } from 'lodash'
+import { Link } from 'react-scroll'
 
 function Navigation ({ links }) {
     return (
@@ -12,7 +12,11 @@ function Navigation ({ links }) {
                         return (
                             <li className={style.item}
                                     key={idx}>
-                                {link.title}
+                                <Link to={link.to}
+                                        smooth={true}
+                                        duration={500}>
+                                    {link.title}
+                                </Link>
                             </li>
                         )
                     })

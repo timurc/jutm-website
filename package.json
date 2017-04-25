@@ -16,6 +16,7 @@
     "object-assign": "^4.1.0",
     "react-helmet": "^5.0.2",
     "react-imation": "^0.5.3",
+    "react-scroll": "^1.5.2",
     "react-track": "^0.4.3",
     "svg-inline-loader": "^0.7.1"
   },
@@ -29,6 +30,6 @@
     "serve-build": "gatsby serve-build",
     "start": "gatsby develop",
     "test": "echo \"Error: no test specified\" && exit 1",
-     "deploy-beta": "rsync -avzc --del public/ voellig@antares.uberspace.de:/var/www/virtual/voellig/jona.volligohne.de/"
- }
+    "deploy-beta": "rsync -avzc --del public/ voellig@antares.uberspace.de:/var/www/virtual/voellig/jona.volligohne.de/"
+  }
 }
