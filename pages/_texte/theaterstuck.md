@@ -1,5 +1,5 @@
 ---
-title: Das Stück
+title: Das Theaterstück
 ---
 
 Jona und ihr selbstgebauter Roboter KISTE gehen auf eine wagemutige Expedition. Ihr Ziel: Sie wollen die geheimnisumwobenen "Tränen der Meerjungfrauen" finden. Auf ihrer Reise in die Tiefsee treffen sie auf tanzende Anglerfische, plaudernde Ruderfußkrebse, fleißige Bergbauroboter und furchteinflößende Tiefseemonster und stehen am Ende vor einer großen Aufgabe. Begleitest du sie auf diesem Abenteuer?
