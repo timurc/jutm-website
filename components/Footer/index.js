@@ -30,16 +30,16 @@ function Navigation ({ wissenschaftsjahr, wid }) {
                 </div>
                 <ul className={style.links}>
                     <li>
-                        <Link to="/kontakt">Kontakt</Link>
+                        <Link to="/kontakt/">Kontakt</Link>
                     </li>
                     <li>
-                        <Link to="/impressum">Impressum</Link>
+                        <Link to="/impressum/">Impressum</Link>
                     </li>
                     <li>
-                        <Link to="/disclamer">Disclamer</Link>
+                        <Link to="/disclamer/">Disclamer</Link>
                     </li>
                     <li>
-                        <Link to="/datenschutz">Datenschutz</Link>
+                        <Link to="/datenschutz/">Datenschutz</Link>
                     </li>
                 </ul>
             </div>
