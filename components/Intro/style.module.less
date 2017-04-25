@@ -48,7 +48,8 @@
     color: @fontColorSea;
     display: flex;
     justify-content: center;
-    transition: 2s all;
+    transition: 2s opacity;
+    overflow: hidden;
 
     &:nth-child(even) {
         .fish_container {
@@ -60,10 +61,14 @@
         opacity: 0;
 
         &:nth-child(odd) {
-            transform: translateX(-@width);
+            .fish_container {
+                transform: translateX(-@width);
+            }
         }
         &:nth-child(even) {
-            transform: translateX(@width);
+            .fish_container {
+                transform: translateX(@width);
+            }
         }
     }
 
@@ -76,6 +81,7 @@
     }
 
     &_container {
+        transition: 2s transform;
         flex: 0 1 @width * 3;
         display: flex;
     }
