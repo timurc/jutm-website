@@ -18,6 +18,7 @@
     position: relative;
     max-width: @sectionWidth;
     margin-top: 1rem;
+    text-align: center;
 }
 
 .logo {
@@ -32,6 +33,10 @@
     bottom: 12vh;
     left: ~"calc(50vw - 5vh)";
 
+    @media (max-height: 750px) {
+        bottom: 8vh;
+    }
+
     &__bottom {
         position: absolute;
     }
@@ -43,7 +48,7 @@
     color: @fontColorSea;
     display: flex;
     justify-content: center;
-    transition: 3s all;
+    transition: 2s all;
 
     &:nth-child(even) {
         .fish_container {
