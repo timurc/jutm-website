@@ -13,20 +13,6 @@ function Navigation ({ wissenschaftsjahr, wid }) {
                 <div className={style.columns}>
                     <SetInnerHTML body={wissenschaftsjahr.body} />
                     <SetInnerHTML body={wid.body} />
-                    <ul className={style.links}>
-                        <li>
-                            <Link to="/kontakt">Kontakt</Link>
-                        </li>
-                        <li>
-                            <Link to="/impressum">Impressum</Link>
-                        </li>
-                        <li>
-                            <Link to="/disclamer">Disclamer</Link>
-                        </li>
-                        <li>
-                            <Link to="/datenschutz">Datenschutz</Link>
-                        </li>
-                    </ul>
                 </div>
                 <div className={style.logos}>
                     <div className={style.logo}>
@@ -42,6 +28,20 @@ function Navigation ({ wissenschaftsjahr, wid }) {
                         <img src={logoWID} alt="Logo WID" className={style.logo_img} />
                     </div>
                 </div>
+                <ul className={style.links}>
+                    <li>
+                        <Link to="/kontakt">Kontakt</Link>
+                    </li>
+                    <li>
+                        <Link to="/impressum">Impressum</Link>
+                    </li>
+                    <li>
+                        <Link to="/disclamer">Disclamer</Link>
+                    </li>
+                    <li>
+                        <Link to="/datenschutz">Datenschutz</Link>
+                    </li>
+                </ul>
             </div>
         </footer>
     )

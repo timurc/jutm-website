@@ -10,6 +10,10 @@
 .inner {
     flex: 0 1 (@sectionWidth * 3);
     padding: 2rem 1rem;
+
+    > * {
+        margin: 0 1rem;
+    }
 }
 
 .columns {
@@ -23,7 +27,7 @@
 
         > * {
             margin: 1rem;
-            flex: 0 1 33.3%;
+            flex: 0 1 50%;
         }
     }
 }
@@ -31,9 +35,22 @@
 .links {
     padding: 0;
     list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-transform: uppercase;
+    font-size: @fontSizeS;
 
     li {
-        margin: 0;
+        margin: .5rem;
+    }
+
+    a {
+        text-decoration: none;
+
+        &:hover {
+            color: black;
+        }
     }
 }
 
