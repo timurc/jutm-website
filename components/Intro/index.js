@@ -26,7 +26,6 @@ export default class Intro extends React.Component {
         const { children, fishes } = this.props;
         const kisteAtBottom = isAtBottom(this.containerEl, this.state.scroll);
         const raiseArm = shouldRaiseArm(this.kisteEl, this.fishEls, this.state.scroll);
-
         const noJs = typeof window === 'undefined';
 
         return (

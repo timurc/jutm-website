@@ -23,7 +23,7 @@
 
         > * {
             margin: 1rem;
-            flex: 0 0 33.3%;
+            flex: 0 1 33.3%;
         }
     }
 }
@@ -34,5 +34,26 @@
 
     li {
         margin: 0;
+    }
+}
+
+.logos {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 1rem -1rem;
+}
+
+.logo {
+    flex: 0 1 (@sectionWidth / 2);
+    margin: 1rem;
+
+    &_heading {
+        text-transform: uppercase;
+        font-size: @fontSizeS;
+        margin: 0 0 1rem;
+    }
+
+    &_img {
+        width: 100%;
     }
 }
