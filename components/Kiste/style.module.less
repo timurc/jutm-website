@@ -1,3 +1,5 @@
+@import '~style/vars';
+
 @kiste: 'graphics/illustrations/kiste_ohne_arme.gif';
 @arm_upper: 'graphics/illustrations/kiste_oberarm.gif';
 @arm_lower: 'graphics/illustrations/kiste_unterarm.gif';
@@ -5,16 +7,24 @@
 
 @ratio: .5571;
 @width: 10vh;
-
-@media (max-height: 500px) {
-    @width: 200px;
-}
-
+@widthS: @sectionWidth / 4;
+@widthL: @sectionWidth / 3;
 @height: (@width / @ratio);
 
 .container {
     width: @width;
     height: @height;
+
+    @media (max-height: 750px) {
+        width: @widthS;
+        height: (@widthS / @ratio);
+    }
+
+    @media (min-height: 1000px) {
+        width: @widthL;
+        height: (@widthL / @ratio);
+    }
+
     animation-duration: 10s;
     animation-name: floatVertically;
     animation-iteration-count: infinite;
@@ -22,8 +32,8 @@
 }
 
 .kiste {
-    width: @width;
-    height: @height;
+    width: 100%;
+    height: 100%;
     position: absolute;
     animation-duration: 5s;
     animation-name: floatSideways;
