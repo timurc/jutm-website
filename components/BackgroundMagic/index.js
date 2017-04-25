@@ -1,6 +1,7 @@
 import React from 'react';
 import style from './style.module.less';
 import Section from 'components/Section';
+import classNames from 'classnames';
 
 export default class Background extends React.Component {
     constructor(props) {
@@ -15,8 +16,13 @@ export default class Background extends React.Component {
         const waterStyle = {
             transform: 'translate3d(0,' + (this.state.scroll / -2) +'px, 0)'
         }
+        const noJs = typeof window === 'undefined';
+
         return (
-            <div className={style.container}
+            <div className={classNames(
+                        style.container, 
+                        {[style.container__noJs]: noJs}
+                    )}
                     ref={(c) => this.containerEl = c}>
                 <div className={style.water}
                     style={waterStyle}
