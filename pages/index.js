@@ -8,8 +8,7 @@ import BackgroundMagic from 'components/BackgroundMagic'
 import Intro from 'components/Intro'
 import SetInnerHTML from 'components/SetInnerHTML'
 import Section from 'components/Section'
-import intro from './_texte/intro.md'
-import ponyhof from './_texte/ponyhof.md'
+import theaterstuck from './_texte/theaterstuck.md'
 import { filter, map } from 'lodash'
 
 export default function Index({ route }) {
@@ -26,12 +25,11 @@ export default function Index({ route }) {
                 ]}
             />
             <BackgroundMagic />
-            <Intro title={intro.title}
-                    fishes={fishes}>
+            <Intro fishes={fishes}>
                 Komm mit auf eine wagemutige Expedition
             </Intro>
-            <Section title={ponyhof.title}>
-                <SetInnerHTML body={ponyhof.body} />
+            <Section title={theaterstuck.title}>
+                <SetInnerHTML body={theaterstuck.body} />
             </Section>
         </div>
     )
