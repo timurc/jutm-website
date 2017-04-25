@@ -9,6 +9,7 @@ import classNames from 'classnames';
 
 import fisch from 'graphics/illustrations/fisch1.png'
 
+const TYPING_SPEED = 20;
 const IMG_URL = 'graphics/illustrations/'
 
 export default class Intro extends React.Component {
@@ -78,21 +79,59 @@ export default class Intro extends React.Component {
 }
 
 class Fish extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            text: '',
+            inView: false
+        };
+    }
+
+    componentWillReceiveProps(nextProps) {
+        const inView = isInView(this.fishEl, nextProps.scrollPosition);
+
+        if (inView !== this.state.inView) {
+            this.setState({
+                inView: inView
+            });
+
+            if (inView) {
+                this.typeLetter(stripHTML(nextProps.fish.body).split(''))
+            } else {
+                this.setState({
+                    text: ''
+                })
+                clearTimeout(this.timer)
+            }
+        } 
+    }
+
+    typeLetter(text) {
+        if (text.length !== 0) {
+            this.setState({
+                text: this.state.text + text.shift()
+            })
+            this.timer = setTimeout(() => {
+                this.typeLetter(text)
+            }, TYPING_SPEED)
+        }
+    }
+
     render() {
         const { fish, scrollPosition } = this.props;
         const url = require('graphics/illustrations/' + fish.image);
         const fishStyle = { backgroundImage: 'url(' + url + ')' };
-        const inView = isInView(this.fishEl, scrollPosition);
 
         return (
-            <div className={classNames(style.fish, {[style.fish__active]: inView})}
+            <div className={classNames(style.fish, {[style.fish__active]: this.state.inView})}
                     ref={(c) => this.fishEl = c}>
                 <div className={style.fish_container}>
                     <div className={style.fish_container_inner}>
                         <div className={style.fish_image} style={fishStyle} />
                         <div className={style.fish_description}>
                             {fish.title}
-                            <SetInnerHTML body={fish.body} />
+                            <p>{this.state.text}</p>
                         </div>
                     </div>
                 </div>
@@ -130,4 +169,11 @@ function shouldRaiseArm(kiste, fishes, scrollTop) {
 
         return raise;
     }
+}
+
+
+function stripHTML(html) {
+   const tmp = document.createElement('DIV');
+   tmp.innerHTML = html;
+   return tmp.textContent || tmp.innerText || '';
 }
