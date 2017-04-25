@@ -5,16 +5,13 @@ import WJlogo from 'components/WJlogo'
 
 const LINKS = [
     {
-        title: 'Das Stück',
+        title: 'Theaterstück',
         href: '#'
     }, {
-        title: 'Termine',
+        title: 'Künstler',
         href: '#'
     }, {
-        title: 'Förderer',
-        href: '#'
-    }, {
-        title: 'Kay',
+        title: 'Tourplan',
         href: '#'
     }
 ]
