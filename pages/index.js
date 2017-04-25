@@ -28,7 +28,7 @@ export default function Index({ route }) {
             <BackgroundMagic />
             <Intro title={intro.title}
                     fishes={fishes}>
-                Auf der Suche nach den Tränen der Meerjungfrauen
+                Komm mit auf eine wagemutige Expedition
             </Intro>
             <Section title={ponyhof.title}>
                 <SetInnerHTML body={ponyhof.body} />
