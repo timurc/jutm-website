@@ -58,7 +58,7 @@ export default class Background extends React.Component {
 
     componentWillUnmount() {
         if (typeof window !== 'undefined') {
-            window.removeEventListener('resize', this.boundScroll);
+            window.removeEventListener('scroll', this.boundScroll);
         }
     }
 }

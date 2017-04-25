@@ -78,7 +78,7 @@ export default class Intro extends React.Component {
 
     componentWillUnmount() {
         if (typeof window !== 'undefined') {
-            window.removeEventListener('resize', this.boundScroll);
+            window.removeEventListener('scroll', this.boundScroll);
         }
     }
 }
@@ -110,6 +110,10 @@ class Fish extends React.Component {
                 clearTimeout(this.timer)
             }
         } 
+    }
+
+    componentWillUnmount() {
+        clearTimeout(this.timer);
     }
 
     typeLetter(text) {
