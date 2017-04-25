@@ -27,6 +27,8 @@ export default class Intro extends React.Component {
         const kisteAtBottom = isAtBottom(this.containerEl, this.state.scroll);
         const raiseArm = shouldRaiseArm(this.kisteEl, this.fishEls, this.state.scroll);
 
+        const noJs = typeof window === 'undefined';
+
         return (
             <div ref={(c) => this.containerEl = c}
                     className={style.container}>
@@ -46,7 +48,11 @@ export default class Intro extends React.Component {
                         )
                     })
                 }
-                <div className={classNames(style.kiste, {[style.kiste__bottom]: kisteAtBottom})}
+                <div className={classNames(
+                            style.kiste, {
+                                [style.kiste__bottom]: kisteAtBottom,
+                                [style.kiste__noJs]: noJs,
+                            })}
                         ref={(c) => this.kisteEl = c}>
                     <Kiste raiseArm={shouldRaiseArm(this.kisteEl, this.fishEls, this.state.scroll)}/>
                 </div>
@@ -84,7 +90,7 @@ class Fish extends React.Component {
 
         this.state = {
             text: '',
-            inView: false
+            inView: typeof window === 'undefined'
         };
     }
 
@@ -131,7 +137,10 @@ class Fish extends React.Component {
                         <div className={style.fish_image} style={fishStyle} />
                         <div className={style.fish_description}>
                             {fish.title}
-                            <p>{this.state.text}</p>
+                            { typeof window === 'undefined' ?
+                                <SetInnerHTML body={fish.body} /> :
+                                <p>{this.state.text}</p>
+                            }
                         </div>
                     </div>
                 </div>
