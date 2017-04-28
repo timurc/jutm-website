@@ -36,7 +36,7 @@ function Navigation ({ wissenschaftsjahr, wid }) {
                         <Link to="/impressum/">Impressum</Link>
                     </li>
                     <li>
-                        <Link to="/disclamer/">Disclamer</Link>
+                        <Link to="/disclamer/">Disclaimer</Link>
                     </li>
                     <li>
                         <Link to="/datenschutz/">Datenschutz</Link>
