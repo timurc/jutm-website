@@ -26,13 +26,15 @@ export default class Intro extends React.Component {
         const { children, fishes } = this.props;
         const kisteAtBottom = isAtBottom(this.containerEl, this.state.scroll);
         const raiseArm = shouldRaiseArm(this.kisteEl, this.fishEls, this.state.scroll);
+        const sloganColor = {color: this.getSloganColor(this.state.scroll)};
         const noJs = typeof window === 'undefined';
 
         return (
             <div ref={(c) => this.containerEl = c}
                     className={style.container}>
                 <section className={style.top}>
-                    <div className={style.inner}>
+                    <div className={style.inner}
+                            style={sloganColor}>
                         <SVGinline svg={logo} 
                             className={style.logo} />
                         { children }
@@ -57,6 +59,11 @@ export default class Intro extends React.Component {
                 </div>
             </div>
         )
+    }
+
+    getSloganColor(scroll) {
+        const c = 255 - Math.min(Math.max(scroll, 0), 255);
+        return 'rgb(' + c + ',' + c + ',' + c + ')'
     }
 
     onScroll() {
