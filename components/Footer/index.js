@@ -5,6 +5,8 @@ import SetInnerHTML from 'components/SetInnerHTML'
 import SVGinline from 'components/SVGinline'
 import logoBMBF from '!svg-inline-loader!graphics/logo-BMBF.svg'
 import logoWID from 'graphics/logo-WID.png'
+import logoWJ from '!svg-inline-loader!graphics/WJlogo.svg'
+import classNames from 'classnames'
 
 function Navigation ({ wissenschaftsjahr, wid }) {
     return (       
@@ -26,6 +28,8 @@ function Navigation ({ wissenschaftsjahr, wid }) {
                             Ein Projekt von
                         </h2>
                         <img src={logoWID} alt="Logo WID" className={style.logo_img} />
+                    <div className={classNames(style.logo, style.logo_wj)}>
+                        <SVGinline svg={logoWJ} className={style.logo_img} />
                     </div>
                 </div>
                 <ul className={style.links}>
