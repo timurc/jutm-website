@@ -1,5 +1,3 @@
-# Wissenschaft im Dialog
+# Das Projekt
 
-Wissenschaft im Dialog (WiD) setzt sich als gemeinnützige Organisation für die Diskussion und den Austausch über Forschung in Deutschland ein. WiD organisiert Diskussionsveranstaltungen, Ausstellungen oder Wettbewerbe und entwickelt neue Formate der Wissenschaftskommunikation.
-
-[wissenschaft-im-dialog.de](http://www.wissenschaft-im-dialog.de)
+Das Projekt Jona und die Tiefseemonster wird im Rahmen des Wissenschaftsjahres 2016\*17 von [Wissenschaft im Dialog](http://www.wissenschaft-im-dialog.de) entwickelt, umgesetzt und an verschiedenen Standorten in Deutschland aufgeführt. Es wird vom Bundesministerium für Bildung und Forschung gefördert. Durch das Stück sollen Kindern ab sieben Jahren die faszinierende Welt der Tiefsee – und was wir durch Forschung über sie wissen – entdecken, aber auch für menschlichen Einfluss auf diesen Lebensraum sensibilisiert werden. 
