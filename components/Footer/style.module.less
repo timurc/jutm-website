@@ -1,5 +1,7 @@
 @import '~style/vars';
 
+@mobileWidth: (@sectionWidth * 2);
+
 .container {
     background: white;
     display: flex;
@@ -10,7 +12,7 @@
     flex: 0 1 (@sectionWidth * 3);
     padding: 2rem 1rem;
 
-    @media (min-width: (@sectionWidth * 2)) {
+    @media (min-width: @mobileWidth) {
         padding: 4rem 1rem;
     }
 }
@@ -25,7 +27,7 @@
         margin-top: 0;
     }
     
-    @media (min-width: (@sectionWidth * 2)) {
+    @media (min-width: @mobileWidth) {
         display: flex;
         margin: -1rem;
 
@@ -61,12 +63,22 @@
 .logos {
     display: flex;
     flex-wrap: wrap;
-    margin: 1rem -1rem;
+    margin: 1rem -2rem;
 }
 
 .logo {
-    flex: 0 1 (@sectionWidth / 2);
-    margin: 1rem;
+    flex: 0 1 11rem;
+    margin: 2rem;
+
+    &_wj {
+        flex-basis: 13rem;
+    }
+
+    @media (min-width: @mobileWidth) {
+        &:last-child {
+            margin-left: auto;
+        }
+    }
 
     &_heading {
         text-transform: uppercase;
@@ -75,6 +87,9 @@
     }
 
     &_img {
+        &__wid {
+            margin-top: -.5rem;
+        }
         width: 100%;
     }
 }

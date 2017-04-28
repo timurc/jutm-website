@@ -27,7 +27,8 @@ function Navigation ({ wissenschaftsjahr, wid }) {
                         <h2 className={style.logo_heading}>
                             Ein Projekt von
                         </h2>
-                        <img src={logoWID} alt="Logo WID" className={style.logo_img} />
+                        <img src={logoWID} alt="Logo WID" className={classNames(style.logo_img, style.logo_img__wid)} />
+                    </div>
                     <div className={classNames(style.logo, style.logo_wj)}>
                         <SVGinline svg={logoWJ} className={style.logo_img} />
                     </div>
