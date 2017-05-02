@@ -55,12 +55,13 @@
 
 .fish {
     @width: @sectionWidth;
+    @transitionSpeed: 4s;
 
     color: @fontColorSea;
     -webkit-font-smoothing: antialiased;
     display: flex;
     justify-content: center;
-    transition: 2s opacity;
+    transition: @transitionSpeed opacity;
     overflow: hidden;
 
     &:nth-child(even) {
@@ -93,7 +94,7 @@
     }
 
     &_container {
-        transition: 2s transform;
+        transition: @transitionSpeed transform;
         flex: 0 1 @width * 3;
         display: flex;
     }
