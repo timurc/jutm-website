@@ -136,15 +136,31 @@ class Fish extends React.Component {
 
     render() {
         const { fish, scrollPosition } = this.props;
-        const url = require('graphics/illustrations/' + fish.image);
-        const fishStyle = { backgroundImage: 'url(' + url + ')' };
+        let image;
+
+        if (fish.image) {
+            const url = require('graphics/illustrations/' + fish.image);
+            image = <div className={style.fish_image} style={getBackgroundStyle(url)} />
+        } else if (fish.images) {
+            const url1 = require('graphics/illustrations/' + fish.images[0]);
+            const url2 = require('graphics/illustrations/' + fish.images[1]);
+            const url3 = require('graphics/illustrations/' + fish.images[2]);
+
+            image = (
+                <div className={style.fish_image}>
+                    <div style={getBackgroundStyle(url1)} />
+                    <div style={getBackgroundStyle(url2)} />
+                    <div style={getBackgroundStyle(url3)} />
+                </div>
+            )
+        }
 
         return (
             <div className={classNames(style.fish, {[style.fish__active]: this.state.inView})}
                     ref={(c) => this.fishEl = c}>
                 <div className={style.fish_container}>
                     <div className={style.fish_container_inner}>
-                        <div className={style.fish_image} style={fishStyle} />
+                        { image }
                         <div className={style.fish_description}>
                             {fish.title}
                             { typeof window === 'undefined' ?
@@ -190,6 +206,9 @@ function shouldRaiseArm(kiste, fishes, scrollTop) {
     }
 }
 
+function getBackgroundStyle (file) {
+    return { backgroundImage: 'url(' + file + ')' }
+}
 
 function stripHTML(html) {
    const tmp = document.createElement('DIV');
