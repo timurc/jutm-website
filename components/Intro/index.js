@@ -101,7 +101,7 @@ class Fish extends React.Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        const inView = isInView(this.fishEl, nextProps.scrollPosition);
+        const inView = isInView(this.fishEl, nextProps.scrollPosition, -200);
 
         if (inView !== this.state.inView) {
             this.setState({
@@ -175,9 +175,9 @@ class Fish extends React.Component {
     }
 }
 
-function isInView(el, scrollPosition) {
+function isInView(el, scrollPosition, offset) {
     if (el) {
-        return el.offsetTop < (scrollPosition + window.innerHeight);
+        return el.offsetTop < (scrollPosition + window.innerHeight + offset);
     }
 }
 
