@@ -54,9 +54,10 @@ export default class Intro extends React.Component {
                             style.kiste, {
                                 [style.kiste__bottom]: kisteAtBottom,
                                 [style.kiste__noJs]: noJs,
+                                [style.kiste__raising]: raiseArm,
                             })}
                         ref={(c) => this.kisteEl = c}>
-                    <Kiste raiseArm={shouldRaiseArm(this.kisteEl, this.fishEls, this.state.scroll)}/>
+                    <Kiste raiseArm={raiseArm}/>
                 </div>
             </div>
         )

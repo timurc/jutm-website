@@ -12,6 +12,7 @@
 
 .container {
     position: relative;
+    padding-bottom: 10rem;
 }
 
 .inner {
@@ -37,6 +38,7 @@
     position: fixed;
     bottom: 12vh;
     left: ~"calc(50vw - 5vh)";
+    transition: left 2s;
 
     @media (max-height: 750px) {
         bottom: 8vh;
@@ -50,6 +52,11 @@
         position: absolute;
         bottom: auto;
         top: 66vh;
+    }
+    @media (max-width: @widthBreakL) {
+        &__raising {
+            left: 1rem;
+        }
     }
 }
 
@@ -65,23 +72,30 @@
     overflow: hidden;
     font-size: @fontSizeL;
 
-    &:nth-child(even) {
-        .fish_container {
-            justify-content: flex-end;
+    @media (max-width: @widthBreakL) {
+        font-size: @fontSizeM;
+    }
+
+    @media (min-width: @widthBreakL) {
+        &:nth-child(odd) {
+            .fish_container {
+                justify-content: flex-start;
+            }
         }
     }
 
     &:not(&__active) {
         opacity: 0;
 
-        &:nth-child(odd) {
-            .fish_container {
-                transform: translateX(-@width);
-            }
+        .fish_container {
+            transform: translateX(@width);
         }
-        &:nth-child(even) {
-            .fish_container {
-                transform: translateX(@width);
+
+        @media (min-width: @widthBreakL) {
+            &:nth-child(odd) {
+                .fish_container {
+                    transform: translateX(-@width);
+                }
             }
         }
     }
@@ -89,15 +103,20 @@
     &_container_inner {
         min-height: 50vh;
         width: @width;
-        margin: 1rem;
+        margin: 3rem 1rem;
         display: flex;
         flex-direction: column;
+
+        @media (max-width: @widthBreakL) {
+            width: ~"calc(100vw - 8rem)";
+        }
     }
 
     &_container {
         transition: @transitionSpeed transform;
         flex: 0 1 @width * 3;
         display: flex;
+        justify-content: flex-end;
     }
 
     &_heading {

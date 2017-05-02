@@ -7,17 +7,24 @@
 
 @ratio: .5571;
 @width: 10vh;
-@widthS: @sectionWidth / 4;
+@widthXS: 3rem;
+@widthS: 5rem;
 @widthL: @sectionWidth / 3;
 @height: (@width / @ratio);
 
 .container {
     width: @width;
     height: @height;
+    transition: all 2s;
 
     @media (max-height: 750px) {
         width: @widthS;
         height: (@widthS / @ratio);
+
+        &__raise_mobile {
+            width: @widthXS;
+            height: (@widthXS / @ratio);
+        }
     }
 
     @media (min-height: 1000px) {
@@ -35,10 +42,13 @@
     width: 100%;
     height: 100%;
     position: absolute;
-    animation-duration: 5s;
-    animation-name: floatSideways;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease-in-out;
+
+    @media (min-width: @widthBreakL) {
+        animation-name: floatSideways;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
+    }
 }
 
 .body {
@@ -91,9 +101,19 @@
     position: absolute;
     background-image: url(@arm_upper);
 
-    &__raise {
-        &, .arm_lower {
-            transform: rotate(-40deg);
+    @media (min-width: @widthBreakL) {
+        &__raise {
+            &, .arm_lower {
+                transform: rotate(-40deg);
+            }
+        }
+    }
+
+    @media (max-width: @widthBreakL) {
+        &__raise_mobile {
+            &, .arm_lower {
+                transform: rotate(-40deg);
+            }
         }
     }
 

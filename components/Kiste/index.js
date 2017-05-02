@@ -6,7 +6,7 @@ import { map } from 'lodash'
 
 function Kiste ({ links, raiseArm, className }) {
     return (
-        <div className={classnames(className, style.container)}>
+        <div className={classnames(className, style.container, {[style.container__raise_mobile]: raiseArm !== undefined})}>
             <div className={style.kiste}>
                 <div className={style.body} />
                 <div className={style.schraube}>
@@ -25,7 +25,7 @@ function Kiste ({ links, raiseArm, className }) {
                     <div className={classnames(
                                 style.arm, 
                                 style.arm_r,
-                                {[style.arm__raise]: raiseArm === 'R'}
+                                {[style.arm__raise]: raiseArm === 'R', [style.arm__raise_mobile]: raiseArm !== undefined}
                             )}>
                         <div className={classnames(style.arm_l_lower, style.arm_lower)} />
                     </div>
