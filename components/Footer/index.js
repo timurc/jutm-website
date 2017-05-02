@@ -17,7 +17,7 @@ function Navigation ({ wissenschaftsjahr, wid }) {
                     <SetInnerHTML body={wid.body} />
                 </div>
                 <div className={style.logos}>
-                    <div className={style.logo}>
+                    <div className={classNames(style.logo, style.logo_bmbf)}>
                         <h2 className={style.logo_heading}>
                             Gefördert vom
                         </h2>
