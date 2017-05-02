@@ -9,7 +9,8 @@ import classNames from 'classnames';
 
 import fisch from 'graphics/illustrations/fisch1.png'
 
-const TYPING_SPEED = 20;
+const TYPING_SPEED = 40;
+const TYPING_STEPS = 100;
 const IMG_URL = 'graphics/illustrations/'
 
 export default class Intro extends React.Component {
@@ -109,10 +110,11 @@ class Fish extends React.Component {
             });
 
             if (inView) {
-                this.typeLetter(stripHTML(nextProps.fish.body).split(''))
+                this.text = stripHTML(nextProps.fish.body).split('');
+                this.typeLetter(0)
             } else {
                 this.setState({
-                    text: ''
+                    written: 0
                 })
                 clearTimeout(this.timer)
             }
@@ -123,13 +125,14 @@ class Fish extends React.Component {
         clearTimeout(this.timer);
     }
 
-    typeLetter(text) {
-        if (text.length !== 0) {
+    typeLetter(written) {
+        if (written <= TYPING_STEPS) {
+            const newWritten = written + 1;
             this.setState({
-                text: this.state.text + text.shift()
+                written: newWritten
             })
             this.timer = setTimeout(() => {
-                this.typeLetter(text)
+                this.typeLetter(newWritten)
             }, TYPING_SPEED)
         }
     }
@@ -165,7 +168,19 @@ class Fish extends React.Component {
                             <h2 className={style.fish_heading}>{fish.title}</h2>
                             { typeof window === 'undefined' ?
                                 <SetInnerHTML body={fish.body} /> :
-                                <p>{this.state.text}</p>
+                                <p>
+                                    {
+                                        map(this.text, (letter, idx) => {
+                                            const active = idx / this.text.length < this.state.written / TYPING_STEPS;
+                                            return (
+                                                <span style={ {visibility: active ? 'visible' : 'hidden'} }
+                                                        key={idx}>
+                                                    { letter }
+                                                </span>
+                                            )
+                                        })
+                                    }
+                                </p>
                             }
                         </div>
                     </div>
