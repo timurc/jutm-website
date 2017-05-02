@@ -3,26 +3,12 @@ import { Link } from 'react-router'
 import { prefixLink } from 'gatsby-helpers'
 import Helmet from "react-helmet"
 import { config } from 'config'
-import Navigation from 'components/Navigation'
 import BackgroundMagic from 'components/BackgroundMagic'
 import Intro from 'components/Intro'
 import SetInnerHTML from 'components/SetInnerHTML'
 import Section from 'components/Section'
 import theaterstuck from './_texte/theaterstuck.md'
 import { filter, map } from 'lodash'
-
-const LINKS = [
-    {
-        title: 'Theaterstück',
-        to: 'beschreibung'
-    }, {
-        title: 'Künstler',
-        to: 'beschreibung'
-    }, {
-        title: 'Tourplan',
-        to: 'beschreibung'
-    }
-]
 
 export default function Index({ route }) {
     const fishes = map(filter(route.pages, (page) => {
@@ -37,7 +23,6 @@ export default function Index({ route }) {
                     { "name": "description", "content": config.siteTitle }
                 ]}
             />
-            <Navigation links={LINKS} />
             <BackgroundMagic />
             <Intro fishes={fishes}>
                 Komm mit auf eine wagemutige Expedition
