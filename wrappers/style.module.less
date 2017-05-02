@@ -5,8 +5,18 @@
 
 .container {
     position: relative;
-    margin-top: 10rem;
+    margin-top: 30rem;
     background: linear-gradient(to bottom, @blue, black);
+    padding: 5rem 0;
+
+    @media (max-height: @heightBreak) {
+        margin-top: 20rem;
+        padding-top: 3rem;
+    }
+
+    @media (max-width: @widthBreak) {
+        padding: 0 0 1rem;
+    }
 
     &:before {
         content: '';
@@ -23,4 +33,24 @@
 
 .heading {
     font-size: @fontSizeXL;
+}
+
+.jutm_logo {
+    @width: 20rem;
+    position: absolute;
+    top: 20rem;
+    left: 50%;
+    margin-left: -(@width / 2);
+    width: @width;
+
+    @media (max-height: @heightBreak) {
+        top: 10rem;
+    }
+
+    @media (max-width: @widthBreak) {
+        @width: 15rem;
+        top: 12rem;
+        margin-left: -(@width / 2);
+        width: @width;
+    }
 }

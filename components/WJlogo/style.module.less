@@ -1,6 +1,12 @@
+@import '~style/vars';
+
 .container {
     position: absolute;
     top: 1rem;
     right: 1rem;
     width: 12rem;
+
+    @media (max-width: @widthBreak), (max-height: @heightBreak) {
+        width: 6rem;
+    }
 }

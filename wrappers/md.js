@@ -14,9 +14,7 @@ export default function MarkdownWrapper({ route }) {
     const post = route.page.data
     return (
         <div>
-            <Link to="/">
-                <JUTMlogo />
-            </Link>
+            <JUTMlogo className={style.jutm_logo}/>
             
             <div className={style.container}>
                 <Helmet
