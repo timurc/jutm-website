@@ -162,7 +162,7 @@ class Fish extends React.Component {
                     <div className={style.fish_container_inner}>
                         { image }
                         <div className={style.fish_description}>
-                            {fish.title}
+                            <h2 className={style.fish_heading}>{fish.title}</h2>
                             { typeof window === 'undefined' ?
                                 <SetInnerHTML body={fish.body} /> :
                                 <p>{this.state.text}</p>

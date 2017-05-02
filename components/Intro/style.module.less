@@ -63,6 +63,7 @@
     justify-content: center;
     transition: @transitionSpeed opacity;
     overflow: hidden;
+    font-size: @fontSizeL;
 
     &:nth-child(even) {
         .fish_container {
@@ -97,6 +98,10 @@
         transition: @transitionSpeed transform;
         flex: 0 1 @width * 3;
         display: flex;
+    }
+
+    &_heading {
+        font-size: @fontSizeXL;
     }
 
     &_image {
