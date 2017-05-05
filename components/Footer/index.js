@@ -18,9 +18,6 @@ function Navigation ({ wissenschaftsjahr, wid }) {
                 </div>
                 <div className={style.logos}>
                     <div className={classNames(style.logo, style.logo_bmbf)}>
-                        <h2 className={style.logo_heading}>
-                            Gefördert vom
-                        </h2>
                         <SVGinline svg={logoBMBF} className={style.logo_img} />
                     </div>
                     <div className={style.logo}>
