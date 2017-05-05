@@ -151,7 +151,7 @@ class Fish extends React.Component {
             image = (
                 <div className={classNames(style.fish_image, {[style.fish_image__many]: fish.images.length > 3}, {[style.fish_image__few]: fish.images.length <= 3})}>
                     { map(fish.images, (image) => {
-                        return <div style={getBackgroundStyle(require('graphics/illustrations/' + image))} />
+                        return <div key={image} style={getBackgroundStyle(require('graphics/illustrations/' + image))} />
                     })}                    
                 </div>
             )
