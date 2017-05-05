@@ -20,7 +20,14 @@
     @media (max-height: 750px) {
         width: @widthS;
         height: (@widthS / @ratio);
+    }
 
+    @media (max-height: 550px) {
+        width: 4rem;
+        height: (4rem / @ratio);
+    }
+
+    @media (max-width: @widthBreakL) {
         &__raise_mobile {
             width: @widthXS;
             height: (@widthXS / @ratio);

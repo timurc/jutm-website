@@ -1,5 +1,8 @@
 @import '~style/vars';
 
+@transitionSpeedFast: .5s;
+@transitionSpeed: 3s;
+
 .top {
     display: flex;
     align-items: flex-start;
@@ -62,7 +65,6 @@
 
 .fish {
     @width: @sectionWidth;
-    @transitionSpeed: 4s;
 
     color: @fontColorSea;
     -webkit-font-smoothing: antialiased;
@@ -74,6 +76,7 @@
 
     @media (max-width: @widthBreakL) {
         font-size: @fontSizeM;
+        transition-duration: @transitionSpeedFast;
     }
 
     @media (min-width: @widthBreakL) {

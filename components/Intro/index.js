@@ -11,7 +11,8 @@ import fisch from 'graphics/illustrations/fisch1.png'
 
 const TYPING_SPEED = 40;
 const TYPING_STEPS = 100;
-const IMG_URL = 'graphics/illustrations/'
+const IMG_URL = 'graphics/illustrations/';
+const MOBILE_WIDTH = 700;
 
 export default class Intro extends React.Component {
     constructor(props) {
@@ -103,7 +104,8 @@ class Fish extends React.Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        const inView = isInView(this.fishEl, nextProps.scrollPosition, -200);
+        const isMobile = window.innerWidth < MOBILE_WIDTH;
+        const inView = isInView(this.fishEl, nextProps.scrollPosition, isMobile ? 0 : -200);
 
         if (inView !== this.state.inView) {
             this.setState({
