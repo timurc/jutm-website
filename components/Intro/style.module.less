@@ -15,7 +15,7 @@
 
 .container {
     position: relative;
-    padding-bottom: 10rem;
+    padding-bottom: 20rem;
 }
 
 .inner {
@@ -56,6 +56,13 @@
         bottom: auto;
         top: 66vh;
     }
+
+    @media (max-width: @widthBreakXL) {
+        &__raising {
+            left: 2rem;
+        }
+    }
+
     @media (max-width: @widthBreakL) {
         &__raising {
             left: 1rem;
@@ -79,7 +86,7 @@
         transition-duration: @transitionSpeedFast;
     }
 
-    @media (min-width: @widthBreakL) {
+    @media (min-width: @widthBreakXL) {
         &:nth-child(odd) {
             .fish_container {
                 justify-content: flex-start;
@@ -109,6 +116,10 @@
         margin: 3rem 1rem;
         display: flex;
         flex-direction: column;
+
+        @media (max-width: @widthBreakXL) {
+            width: ~"calc(100vw - 12rem)";
+        }
 
         @media (max-width: @widthBreakL) {
             width: ~"calc(100vw - 8rem)";

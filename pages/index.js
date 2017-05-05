@@ -9,6 +9,7 @@ import SetInnerHTML from 'components/SetInnerHTML'
 import Section from 'components/Section'
 import theaterstuck from './_texte/theaterstuck.md'
 import { filter, map } from 'lodash'
+import style from './landing.module.less'
 
 export default function Index({ route }) {
     const fishes = map(filter(route.pages, (page) => {
@@ -28,7 +29,7 @@ export default function Index({ route }) {
                 Komm mit auf eine wagemutige Expedition
             </Intro>
             <span id="beschreibung" />
-            <Section title={theaterstuck.title}>
+            <Section className={style.theaterstuck}title={theaterstuck.title}>
                 <SetInnerHTML body={theaterstuck.body} />
             </Section>
         </div>

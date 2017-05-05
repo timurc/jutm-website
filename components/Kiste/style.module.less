@@ -22,9 +22,16 @@
         height: (@widthS / @ratio);
     }
 
-    @media (max-height: 550px) {
+    @media (max-height: 600px) {
         width: 4rem;
         height: (4rem / @ratio);
+    }
+
+    @media (max-width: @widthBreakXL) {
+        &__raise_mobile {
+            width: @widthS;
+            height: (@widthS / @ratio);
+        }
     }
 
     @media (max-width: @widthBreakL) {
@@ -50,7 +57,7 @@
     height: 100%;
     position: absolute;
 
-    @media (min-width: @widthBreakL) {
+    @media (min-width: @widthBreakXL) {
         animation-name: floatSideways;
         animation-duration: 5s;
         animation-iteration-count: infinite;
@@ -108,7 +115,7 @@
     position: absolute;
     background-image: url(@arm_upper);
 
-    @media (min-width: @widthBreakL) {
+    @media (min-width: @widthBreakXL) {
         &__raise {
             &, .arm_lower {
                 transform: rotate(-40deg);
@@ -116,7 +123,7 @@
         }
     }
 
-    @media (max-width: @widthBreakL) {
+    @media (max-width: @widthBreakXL) {
         &__raise_mobile {
             &, .arm_lower {
                 transform: rotate(-40deg);
