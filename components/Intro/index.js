@@ -148,15 +148,11 @@ class Fish extends React.Component {
             const url = require('graphics/illustrations/' + fish.image);
             image = <div className={style.fish_image} style={getBackgroundStyle(url)} />
         } else if (fish.images) {
-            const url1 = require('graphics/illustrations/' + fish.images[0]);
-            const url2 = require('graphics/illustrations/' + fish.images[1]);
-            const url3 = require('graphics/illustrations/' + fish.images[2]);
-
             image = (
-                <div className={style.fish_image}>
-                    <div style={getBackgroundStyle(url1)} />
-                    <div style={getBackgroundStyle(url2)} />
-                    <div style={getBackgroundStyle(url3)} />
+                <div className={classNames(style.fish_image, {[style.fish_image__many]: fish.images.length > 3}, {[style.fish_image__few]: fish.images.length <= 3})}>
+                    { map(fish.images, (image) => {
+                        return <div style={getBackgroundStyle(require('graphics/illustrations/' + image))} />
+                    })}                    
                 </div>
             )
         }
