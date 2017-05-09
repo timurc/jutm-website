@@ -15,7 +15,7 @@ const HOME_LINKS = [
         to: 'beschreibung'
     }, {
         title: 'Tourplan',
-        to: 'beschreibung'
+        to: 'tour'
     }
 ]
 
