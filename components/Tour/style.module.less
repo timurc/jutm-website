@@ -10,10 +10,49 @@
     padding-bottom: 2rem;
     display: flex;
     justify-content: space-between;
-    background-image: url(@waveImg);
-    background-position: bottom;
-    background-size: 50% 1rem;
-    background-repeat: repeat-x;
+    position: relative;
+    overflow: hidden;
+
+    &:after {
+        content: '';
+        position: absolute;
+        width: 200%;
+        height: 1rem;
+        bottom: 0;
+        background-image: url(@waveImg);
+        animation-duration: 30s;
+        animation-name: floatSideways;
+        animation-iteration-count: infinite;
+        animation-timing-function: cubic-bezier(0.32, 0.61, 0.71, 0.42);
+    }
+
+    &:nth-child(2) {
+        &:after {
+            animation-delay: -10s;
+        }
+    }
+    &:nth-child(3) {
+        &:after {
+            animation-delay: -5s;
+        }
+    }
+    &:nth-child(4) {
+        &:after {
+            animation-delay: -25s;
+        }
+    }
+    &:nth-child(5) {
+        &:after {
+            animation-delay: -20s;
+        }
+    }
+
+    &:nth-child(odd) {
+        &:after {
+            //animation-direction: reverse;
+        }
+
+    }
 }
 
 .venue {
@@ -27,4 +66,14 @@
     margin-top: .5rem;
     align-self: flex-end;
     text-align: right;
+}
+
+@keyframes floatSideways {
+    0% {
+        transform: translateX(-50%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
 }
