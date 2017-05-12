@@ -1,3 +1,5 @@
+@waveImg: 'components/Tour/wave_separator2.svg';
+
 .list {
     list-style: none;
     padding: 0;
@@ -5,8 +7,13 @@
 
 .event {
     margin-bottom: 1rem;
-    padding-bottom: 1rem;
-    border-bottom: currentColor 1px solid;
+    padding-bottom: 2rem;
+    display: flex;
+    justify-content: space-between;
+    background-image: url(@waveImg);
+    background-position: bottom;
+    background-size: 50% 1rem;
+    background-repeat: repeat-x;
 }
 
 .venue {
@@ -18,4 +25,6 @@
     list-style: none;
     padding: 0;
     margin-top: .5rem;
+    align-self: flex-end;
+    text-align: right;
 }

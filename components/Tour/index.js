@@ -2,6 +2,7 @@ import React from 'react'
 import style from './style.module.less'
 import { map } from 'lodash'
 import moment from 'moment'
+import 'moment/locale/de';
 
 function Tour ({ dates }) {
     return (
@@ -17,16 +18,20 @@ function Event ({ date }) {
 
     return (
         <li className={style.event}>
-            <div className={style.city}>{city}</div>
-            <h2 className={style.venue}>
-                { link ? 
-                    <a href={link} target="_blank">{venue}</a> :
-                    <span>{venue}</span>
-                }
-            </h2>
-            <div className={style.adress}>
-                {street}<br />
-                {zipCode} {city}
+            <div>
+                <h2 className={style.venue}>
+                    {city}
+                </h2>
+                <div className={style.city}>
+                    { link ? 
+                        <a href={link} target="_blank">{venue}</a> :
+                        <span>{venue}</span>
+                    }
+                </div>
+                <div className={style.adress}>
+                    {street}<br />
+                    {zipCode} {city}
+                </div>
             </div>
             <ul className={style.dates}>
                 { map(dates, (d, idx) => {
@@ -39,7 +44,7 @@ function Event ({ date }) {
 }
 
 function Date ({ date }) {
-    const formattedDate = date.format('DD.MM.YYYY, HH:mm [Uhr]')
+    const formattedDate = date.format('DD.MM. ~ HH:mm')
     return (
         <li className={style.date}>
             { formattedDate }

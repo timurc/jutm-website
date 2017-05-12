@@ -37,7 +37,7 @@ export default function Index({ route }) {
                 <SetInnerHTML body={theaterstuck.body} />
             </Section>
             <span id="tour" />
-            <Section title="Tourplan">
+            <Section title="Tour 2017">
                 <Tour dates={dates.data.dates} />
             </Section>
         </div>
