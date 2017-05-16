@@ -1,0 +1,23 @@
+@boldEot: 'file-loader!./../../fonts/9f48a411-8295-4ad8-b97a-f4cc38cef43d.eot?#iefix';
+@boldWoff2: 'file-loader!./../../fonts/79949f65-d692-489f-bd6b-b62647297229.woff2';
+@boldWoff: 'file-loader!./../../fonts/b9597dec-1d68-488e-87e0-d7824cf36028.woff';
+@boldTtf: 'file-loader!./../../fonts/964c9b01-5d07-4ef1-8b71-3b173b54fbcc.ttf';
+
+@normalEot: 'file-loader!./../../fonts/a397c752-ee83-47cf-b8a8-b476511dd2c9.eot?#iefix';
+@normalWoff2: 'file-loader!./../../fonts/53fb9c60-2054-4c31-9283-5562244b4935.woff2';
+@normalWoff: 'file-loader!./../../fonts/45831ca8-93bd-4808-aa5f-3c915944f727.woff';
+@normalTtf: 'file-loader!./../../fonts/429a3e29-88da-4603-94ff-c1450c089c88.ttf';
+
+@font-face {
+    font-family:"DINpro";
+    font-weight: normal;
+    src:url(@normalEot);
+    src:url(@normalEot) format("eot"),url(@normalWoff2) format("woff2"),url(@normalWoff) format("woff"),url(@normalTtf) format("truetype");
+}
+
+@font-face {
+    font-family:"DINpro";
+    font-weight: bold;
+    src:url(@boldEot);
+    src:url(@boldEot) format("eot"),url(@boldWoff2) format("woff2"),url(@boldWoff) format("woff"),url(@boldTtf) format("truetype");
+}
