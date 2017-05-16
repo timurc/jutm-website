@@ -152,7 +152,7 @@ class Fish extends React.Component {
         let image;
 
         if (fish.image) {
-            const url = require('graphics/illustrations/' + fish.image);
+            const url = require('graphics/illustrations/' + fish.image + '.gif');
             image = <div className={style.fish_image} style={getBackgroundStyle(url)} />
         } else if (fish.images) {
             image = (
