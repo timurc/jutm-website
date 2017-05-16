@@ -5,21 +5,20 @@ import { map } from 'lodash'
 import SetInnerHTML from 'components/SetInnerHTML'
 
 function Artists ({ artists }) {
-    console.log(artists)
     return (
         <ul className={style.list}>
-            { map(artists, (artist, idx) => <Artist key={idx} dir={artist.file.dir} {...artist.data} />) }
+            { map(artists, (artist, idx) => <Artist key={idx} {...artist.data} />) }
         </ul>
     )
 }
 
-function Artist({ name, body, image, dir }) {
-    const img = image ? '/' + dir + '/' + image + '.jpg' : undefined;
+function Artist({ name, body, image }) {
+    const img = image ? require('pages/_texte/kunstler/' + image + '.jpg') : undefined;
 
     return (
-        <li>
-            <img src={img} />
-            <h2>{name}</h2>
+        <li className={style.artist}>
+            <h2 className={style.name}>{name}</h2>
+            { img ? <img className={style.image} src={img} /> : null }
             <SetInnerHTML body={body} />
         </li>
     )
