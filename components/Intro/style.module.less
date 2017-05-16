@@ -101,13 +101,13 @@
     &:not(&__active) {
         opacity: 0;
 
-        .fish_container {
+        .fish_image_container {
             transform: translateX(@width);
         }
 
         @media (min-width: @widthBreakL) {
             &:nth-child(odd) {
-                .fish_container {
+                .fish_image_container {
                     transform: translateX(-@width);
                 }
             }
@@ -131,7 +131,6 @@
     }
 
     &_container {
-        transition: @transitionSpeed transform;
         flex: 0 1 @width * 3;
         display: flex;
         justify-content: flex-end;
@@ -152,6 +151,10 @@
         animation-iteration-count: infinite;
         animation-timing-function: ease-in-out;
         animation-duration: 4s;
+
+        &_container {
+            transition: @transitionSpeed transform;
+        }
 
         &__few {
             > * {

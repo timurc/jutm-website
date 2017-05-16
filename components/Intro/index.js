@@ -169,7 +169,9 @@ class Fish extends React.Component {
                     ref={(c) => this.fishEl = c}>
                 <div className={style.fish_container}>
                     <div className={style.fish_container_inner}>
-                        { image }
+                        <div className={style.fish_image_container}>
+                            { image }
+                        </div>
                         <div className={style.fish_description}>
                             <h2 className={style.fish_heading}>{fish.title}</h2>
                             { typeof window === 'undefined' ?
