@@ -1,16 +1,16 @@
 @import '~style/vars';
 
-@kiste: 'graphics/illustrations/kiste_ohne_arme.gif';
+@kiste: 'graphics/illustrations/kiste_ohne_arme_s.gif';
 @arm_upper: 'graphics/illustrations/kiste_oberarm.gif';
 @arm_lower: 'graphics/illustrations/kiste_unterarm.gif';
 @schraube: 'graphics/illustrations/schraube.gif';
 
 @ratio: .5571;
 @width: 7rem;
+@height: (@width / @ratio);
 @widthXS: 3rem;
 @widthS: 5rem;
 @widthL: @sectionWidth / 3;
-@height: (@width / @ratio);
 
 .container {
     width: @width;
@@ -39,11 +39,6 @@
             width: @widthXS;
             height: (@widthXS / @ratio);
         }
-    }
-
-    @media (min-height: 1000px) {
-        width: @widthL;
-        height: (@widthL / @ratio);
     }
 
     animation-duration: 10s;
