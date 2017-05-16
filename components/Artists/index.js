@@ -12,12 +12,12 @@ function Artists ({ artists }) {
     )
 }
 
-function Artist({ name, body, image }) {
+function Artist({ name, body, image, job }) {
     const img = image ? require('pages/_texte/kunstler/' + image + '.jpg') : undefined;
 
     return (
         <li className={style.artist}>
-            <h2 className={style.name}>{name}</h2>
+            <h2 className={style.name}>{name}, {job}</h2>
             { img ? 
                 <div className={style.image_container}>
                     <img className={style.image} src={img} />
