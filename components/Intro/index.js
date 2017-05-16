@@ -39,7 +39,9 @@ export default class Intro extends React.Component {
                             style={sloganColor}>
                         <SVGinline svg={logo} 
                             className={style.logo} />
-                        { children }
+                        <div className={style.slogan}>
+                            { children }
+                        </div>
                     </div>
                 </section>
                 { map(fishes, (fish, idx) => {
