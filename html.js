@@ -1,7 +1,7 @@
 import React from 'react'
 import Helmet from "react-helmet"
-
 import { prefixLink } from 'gatsby-helpers'
+require('file?name=.htaccess!./.htaccess')
 
 const BUILD_TIME = new Date().getTime()
 
