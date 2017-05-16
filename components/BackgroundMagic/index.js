@@ -47,7 +47,12 @@ export default class Background extends React.Component {
     }
 
     getScrollPosition() {
-        return typeof window === 'undefined' ? 0 : window.scrollY;
+        if (typeof window === 'undefined') {
+            return 0;
+        } else {
+            const doc = document.documentElement;
+            return (window.pageYOffset || doc.scrollTop) - (doc.clientTop || 0);
+        }
     }
 
     componentDidMount() {
