@@ -1,4 +1,4 @@
-@break : 800px;
+@break : 820px;
 
 .list {
     padding: 0;
@@ -7,7 +7,7 @@
 
 .artist {
     position: relative;
-    margin: 0 0 2rem;
+    margin: 4rem 0 0;
     
     p {
         margin: .5rem 0;
@@ -22,12 +22,20 @@
     border-radius: 50%;
 
     @media (min-width: @break) {
+        &_container {
+            display: flex;
+            position: absolute;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            right: 100%;
+            top: 0;
+        }
+
         width: 8rem;
         height: 8rem;
-        position: absolute;
-        top: 0;
         right: 100%;
-        margin-right: 1rem;
+        margin-right: 2rem;
     }
 
     @media (max-width: @break) {

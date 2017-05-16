@@ -18,7 +18,11 @@ function Artist({ name, body, image }) {
     return (
         <li className={style.artist}>
             <h2 className={style.name}>{name}</h2>
-            { img ? <img className={style.image} src={img} /> : null }
+            { img ? 
+                <div className={style.image_container}>
+                    <img className={style.image} src={img} />
+                </div> 
+                : null }
             <SetInnerHTML body={body} />
         </li>
     )
