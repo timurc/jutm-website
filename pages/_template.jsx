@@ -12,7 +12,7 @@ const HOME_LINKS = [
         to: 'beschreibung'
     }, {
         title: 'Künstler',
-        to: 'beschreibung'
+        to: 'artists'
     }, {
         title: 'Tourplan',
         to: 'tour'

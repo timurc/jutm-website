@@ -8,6 +8,7 @@ import Intro from 'components/Intro'
 import SetInnerHTML from 'components/SetInnerHTML'
 import Section from 'components/Section'
 import Tour from 'components/Tour'
+import Artists from 'components/Artists'
 import theaterstuck from './_texte/theaterstuck.md'
 import { filter, map, find } from 'lodash'
 import style from './landing.module.less'
@@ -17,6 +18,10 @@ export default function Index({ route }) {
     const fishes = map(filter(route.pages, (page) => {
         return page.path.indexOf('/_fische') === 0;
     }), (page) => page.data);
+
+    const artists = filter(route.pages, (page) => {
+        return page.path.indexOf('/_texte/kunstler') === 0;
+    });
 
     const dates = find(route.pages, {path: '/dates/'})
 
@@ -35,6 +40,10 @@ export default function Index({ route }) {
             <span id="beschreibung" />
             <Section className={style.theaterstuck}title={theaterstuck.title}>
                 <SetInnerHTML body={theaterstuck.body} />
+            </Section>
+            <span id="artists" />
+            <Section title="Die Künstler">
+                <Artists artists={artists} />
             </Section>
             <span id="tour" />
             <Section title="Tour 2017">
