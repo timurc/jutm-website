@@ -10,7 +10,7 @@ import Section from 'components/Section'
 import Tour from 'components/Tour'
 import Artists from 'components/Artists'
 import theaterstuck from './_texte/theaterstuck.md'
-import { filter, map, find } from 'lodash'
+import { filter, map, find, sortBy } from 'lodash'
 import style from './landing.module.less'
 import frontMatter from 'front-matter'
 
@@ -19,9 +19,9 @@ export default function Index({ route }) {
         return page.path.indexOf('/_fische') === 0;
     }), (page) => page.data);
 
-    const artists = filter(route.pages, (page) => {
+    const artists = sortBy(filter(route.pages, (page) => {
         return page.path.indexOf('/_texte/kunstler') === 0;
-    });
+    }), [(a) => { return a.data.order } ]);
 
     const dates = find(route.pages, {path: '/dates/'})
 
