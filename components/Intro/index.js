@@ -53,6 +53,17 @@ export default class Intro extends React.Component {
                         )
                     })
                 }
+                <div className={classNames(style.scroll_hint, {[style.scroll_hint__active]: this.state.scroll === 0})}>
+                    <div>~</div>
+                    <div>~</div>
+                    <div>~</div>
+                    <div>~</div>
+                    <div>~</div>
+                    <div>~</div>
+                    <div>~</div>
+                    <div>~</div>
+                    <div>v</div>
+                </div>
                 <div className={classNames(
                             style.kiste, {
                                 [style.kiste__bottom]: kisteAtBottom,

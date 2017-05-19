@@ -13,6 +13,79 @@
     margin-bottom: 20vh;
 }
 
+.scroll_hint {
+    position: fixed;
+    opacity: 0;
+    pointer-events: none;
+    bottom: 0;
+    color: white;
+    width: 100%;
+    padding: 1rem;
+    text-align: left;
+    transition: opacity 1s ease;
+    animation-name: fadeIn;
+    animation-iteration-count: single;
+    animation-timing-function: ease-in-out;
+    animation-duration: 4s;
+    line-height: 1;
+    font-size: 1.5rem;
+
+    @media (max-width: @widthBreak) {
+        display: none;
+    }
+
+    > * {
+        animation-name: colorFade;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
+        animation-duration: 4s;
+
+        &:nth-child(4n+2) {
+            animation-delay: -1s;
+        }
+
+        &:nth-child(4n+3) {
+            animation-delay: -2s;
+        }
+
+        &:nth-child(4n+4) {
+            animation-delay: -3s;
+        }
+    }
+
+    &__active {
+        opacity: .5;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    80% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: .5;
+    }
+}
+
+@keyframes colorFade {
+    0% {
+        color: @blue;
+    }
+
+    50% {
+        color: white;
+    }
+
+    100% {
+        color: @blue;
+    }
+}
+
 .container {
     position: relative;
     padding-bottom: 20rem;
