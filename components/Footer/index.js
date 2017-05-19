@@ -7,6 +7,7 @@ import logoBMBF from '!svg-inline-loader!graphics/logo-BMBF.svg'
 import logoWID from 'graphics/logo-WID.png'
 import logoWJ from '!svg-inline-loader!graphics/WJlogo.svg'
 import classNames from 'classnames'
+import SocialMediaButtons from 'components/SocialMediaButtons'
 
 function Navigation ({ wissenschaftsjahr, wid }) {
     return (       
@@ -44,6 +45,7 @@ function Navigation ({ wissenschaftsjahr, wid }) {
                         <Link to="/datenschutz/">Datenschutz</Link>
                     </li>
                 </ul>
+                <SocialMediaButtons className={style.social_buttons} />
             </div>
         </footer>
     )

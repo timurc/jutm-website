@@ -6,11 +6,13 @@
     background: white;
     display: flex;
     justify-content: center;
+    position: relative;
+    z-index: 3;
 }
 
 .inner {
     flex: 0 1 (@sectionWidth * 3);
-    padding: 4rem 1rem;
+    padding: 4rem 1rem 1rem;
 }
 
 .columns {
@@ -93,3 +95,8 @@
         width: 100%;
     }
 }
+
+ .social_buttons {
+    display: flex;
+    justify-content: center;
+ }
