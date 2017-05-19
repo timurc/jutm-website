@@ -9,6 +9,10 @@
     background: linear-gradient(to bottom, @blue, black);
     padding: 1px;
 
+    @media (max-height: @heightBreakL) {
+        margin-top: 25rem;
+    }
+
     @media (max-height: @heightBreak) {
         margin-top: 20rem;
     }
@@ -38,11 +42,15 @@
     margin-left: -(@width / 2);
     width: @width;
 
+    @media (max-height: @heightBreakL) {
+        top: 15rem;
+    }
+
     @media (max-height: @heightBreak) {
         top: 10rem;
     }
 
-    @media (max-width: @widthBreak) {
+    @media (max-width: @widthBreakL) {
         @width: 15rem;
         top: 12rem;
         margin-left: -(@width / 2);

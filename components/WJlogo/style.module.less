@@ -6,6 +6,10 @@
     right: 1rem;
     width: 12rem;
 
+    @media (max-width: @widthBreak), (max-height: @heightBreakL) {
+        width: 10rem;
+    }
+
     @media (max-width: @widthBreak), (max-height: @heightBreak) {
         width: 6rem;
     }
