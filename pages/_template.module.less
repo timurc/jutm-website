@@ -1,0 +1,20 @@
+@import '~style/vars';
+
+.social_buttons {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 2;
+
+    @media (max-width: @widthBreakL) {
+        display: none;
+    }
+    
+    a {
+        color: white;
+
+        &:hover {
+            color: @blue;
+        }   
+    }
+}

@@ -1,10 +1,12 @@
 import React from 'react'
 import 'style/main.less'
 import WJlogo from 'components/WJlogo'
+import SocialMediaButtons from 'components/SocialMediaButtons'
 import Footer from 'components/Footer'
 import wid from './_texte/wid.md'
 import wissenschaftsjahr from './_texte/wissenschaftsjahr.md'
 import Navigation from 'components/Navigation'
+import style from './_template.module.less'
 
 const HOME_LINKS = [
     {
@@ -28,6 +30,7 @@ export default function Template({ children, location}) {
     return (
         <div className="mainContainer">
             <WJlogo />
+            <SocialMediaButtons className={style.social_buttons} />
             <Navigation links={links} />
             { children }
             <Footer wid={wid} wissenschaftsjahr={wissenschaftsjahr} />
