@@ -44,6 +44,9 @@ function Navigation ({ wissenschaftsjahr, wid }) {
                     <li>
                         <Link to="/datenschutz/">Datenschutz</Link>
                     </li>
+                    <li>
+                        <a target="_blank" href="https://www.wissenschaftsjahr.de/2016-17/weiterfuehrende-informationen/presse-downloads.html">Presse</a>
+                    </li>
                 </ul>
                 <SocialMediaButtons className={style.social_buttons} />
             </div>
