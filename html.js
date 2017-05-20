@@ -10,7 +10,8 @@ const propTypes = {
 }
 
 export default function HTML ({ body }) {
-    const head = Helmet.rewind()
+    const head = Helmet.rewind();
+    const piwikSetup = buildPiwikSetup();
 
     let css
     if (process.env.NODE_ENV === 'production') {
@@ -30,6 +31,7 @@ export default function HTML ({ body }) {
                 {head.title.toComponent()}
                 {head.meta.toComponent()}
                 {css}
+                { process.env.NODE_ENV === 'production' ? piwikSetup : null }
             </head>
             <body>
                 <div id="react-mount" dangerouslySetInnerHTML={{ __html: body }} />
@@ -37,6 +39,27 @@ export default function HTML ({ body }) {
             </body>
         </html>
     )
+}
+
+function buildPiwikSetup() {
+    const js = `
+        var _paq = _paq || [];
+        /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+        _paq.push(['trackPageView']);
+        _paq.push(['enableLinkTracking']);
+        (function() {
+            var u="//www.wissenschaft-im-dialog.de/piwik/";
+            _paq.push(['setTrackerUrl', u+'piwik.php']);
+            _paq.push(['setSiteId', '16']);
+            var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+            g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+        })();
+    `;
+
+    return <script
+        type="text/javascript"
+        dangerouslySetInnerHTML={{ __html: js }}
+        />;
 }
 
 HTML.propTypes = propTypes;
