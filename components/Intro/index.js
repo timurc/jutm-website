@@ -1,7 +1,7 @@
 import React from 'react';
 import style from './style.module.less';
 import SVGinline from 'components/SVGinline';
-import logo from '!svg-inline-loader!graphics/logo.svg';
+import logo from 'graphics/logo.svg';
 import { map, forEach } from 'lodash';
 import Kiste from 'components/Kiste';
 import SetInnerHTML from 'components/SetInnerHTML'
@@ -37,7 +37,7 @@ export default class Intro extends React.Component {
                 <section className={style.top}>
                     <div className={style.inner}
                             style={sloganColor}>
-                        <SVGinline svg={logo} 
+                        <img src={logo} 
                             className={style.logo} />
                         <div className={style.slogan}>
                             { children }
@@ -46,10 +46,10 @@ export default class Intro extends React.Component {
                 </section>
                 { map(fishes, (fish, idx) => {
                         return (
-                                <Fish fish={fish}
-                                    ref={(c) => this.fishEls[idx] = c}
-                                    key={idx}
-                                    scrollPosition={this.state.scroll} />
+                            <Fish fish={fish}
+                                ref={(c) => this.fishEls[idx] = c}
+                                key={idx}
+                                scrollPosition={this.state.scroll} />
                         )
                     })
                 }
