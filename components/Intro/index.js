@@ -57,12 +57,6 @@ export default class Intro extends React.Component {
                     <div>~</div>
                     <div>~</div>
                     <div>~</div>
-                    <div>~</div>
-                    <div>~</div>
-                    <div>~</div>
-                    <div>~</div>
-                    <div>~</div>
-                    <div>v</div>
                 </div>
                 <div className={classNames(
                             style.kiste, {

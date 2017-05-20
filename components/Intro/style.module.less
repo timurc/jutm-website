@@ -20,15 +20,15 @@
     bottom: 0;
     color: white;
     width: 100%;
-    padding: 1rem;
-    text-align: left;
+    padding: 0 0 1rem;
+    text-align: center;
     transition: opacity 1s ease;
     animation-name: fadeIn;
     animation-iteration-count: single;
     animation-timing-function: ease-in-out;
-    animation-duration: 4s;
-    line-height: 1;
-    font-size: 1.5rem;
+    animation-duration: 5s;
+    line-height: .4;
+    font-size: 3rem;
 
     @media (max-width: @widthBreak) {
         display: none;
@@ -38,18 +38,18 @@
         animation-name: colorFade;
         animation-iteration-count: infinite;
         animation-timing-function: ease-in-out;
-        animation-duration: 4s;
+        animation-duration: 3s;
 
         &:nth-child(4n+2) {
-            animation-delay: -1s;
+            animation-delay: -.25s;
         }
 
         &:nth-child(4n+3) {
-            animation-delay: -2s;
+            animation-delay: -.5s;
         }
 
         &:nth-child(4n+4) {
-            animation-delay: -3s;
+            animation-delay: -.75s;
         }
     }
 
@@ -78,6 +78,10 @@
     }
 
     50% {
+        color: @blue;
+    }
+
+    75% {
         color: white;
     }
 
