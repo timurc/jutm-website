@@ -45,7 +45,7 @@ function Navigation ({ wissenschaftsjahr, wid }) {
                         <Link to="/datenschutz/">Datenschutz</Link>
                     </li>
                     <li>
-                        <a target="_blank" href="https://www.wissenschaftsjahr.de/2016-17/weiterfuehrende-informationen/presse-downloads.html">Presse</a>
+                        <a target="_blank" href="https://www.wissenschaft-im-dialog.de/medien/publikationen-fotos-videos/jona-und-die-tiefseemonster/">Presse</a>
                     </li>
                 </ul>
                 <SocialMediaButtons className={style.social_buttons} />
