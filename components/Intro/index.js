@@ -27,7 +27,7 @@ export default class Intro extends React.Component {
     render() {
         const { children, fishes } = this.props;
         const kisteAtBottom = isAtBottom(this.containerEl, this.state.scroll);
-        const raiseArm = shouldRaiseArm(this.kisteEl, this.fishEls, this.state.scroll);
+        const { raiseArm, activeFish } = shouldRaiseArm(this.kisteEl, this.fishEls, this.state.scroll);
         const sloganColor = {color: this.getSloganColor(this.state.scroll)};
         const noJs = typeof window === 'undefined';
 
@@ -49,7 +49,7 @@ export default class Intro extends React.Component {
                             <Fish fish={fish}
                                 ref={(c) => this.fishEls[idx] = c}
                                 key={idx}
-                                scrollPosition={this.state.scroll} />
+                                isActive={idx <= activeFish} />
                         )
                     })
                 }
@@ -116,15 +116,8 @@ class Fish extends React.Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        const isMobile = window.innerWidth < MOBILE_WIDTH;
-        const inView = isInView(this.fishEl, nextProps.scrollPosition, isMobile ? 0 : -200);
-
-        if (inView !== this.state.inView) {
-            this.setState({
-                inView: inView
-            });
-
-            if (inView) {
+        if (this.props.isActive !== nextProps.isActive) {
+            if (nextProps.isActive) {
                 this.text = stripHTML(nextProps.fish.body).split('');
                 this.typeLetter(0)
             } else {
@@ -133,7 +126,7 @@ class Fish extends React.Component {
                 })
                 clearTimeout(this.timer)
             }
-        } 
+        }
     }
 
     componentWillUnmount() {
@@ -153,7 +146,7 @@ class Fish extends React.Component {
     }
 
     render() {
-        const { fish, scrollPosition } = this.props;
+        const { fish, isActive } = this.props;
         let image;
 
         if (fish.image) {
@@ -170,7 +163,7 @@ class Fish extends React.Component {
         }
 
         return (
-            <div className={classNames(style.fish, {[style.fish__active]: this.state.inView})}
+            <div className={classNames(style.fish, {[style.fish__active]: isActive})}
                     ref={(c) => this.fishEl = c}>
                 <div className={style.fish_container}>
                     <div className={style.fish_container_inner}>
@@ -218,19 +211,23 @@ function isAtBottom(el, scrollPosition) {
 function shouldRaiseArm(kiste, fishes, scrollTop) {
     if (kiste) {
         const centerKiste = scrollTop + kiste.offsetTop + (kiste.offsetHeight / 2);
-        let raise = undefined;
+        let raiseArm = undefined;
+        let activeFish = undefined;
 
         forEach(fishes, (fish, idx) => {
             const el = fish.fishEl;
             const top = el.offsetTop;
             const bottom = top + el.offsetHeight;
             if (top < centerKiste && bottom > centerKiste) {
-                raise = idx % 2 ? 'L' : 'R';
+                activeFish = idx;
+                raiseArm = idx % 2 ? 'L' : 'R';
                 return false;
             }
         })
 
-        return raise;
+        return { raiseArm, activeFish };
+    } else {
+        return {};
     }
 }
 
