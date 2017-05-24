@@ -13,7 +13,7 @@ function Tour ({ dates }) {
 }
 
 function Event ({ date }) {
-    const { venue, city, street, zipCode, link } = date;
+    const { venue, venue2 , city, street, zipCode, link } = date;
     const dates = map(date.dates, (d) => moment(d));
 
     return (
@@ -28,6 +28,10 @@ function Event ({ date }) {
                         <span>{venue}</span>
                     }
                 </div>
+                { venue2 
+                    ? <div>{venue2}</div>
+                    : null
+                }
                 <div className={style.adress}>
                     {street}<br />
                     {zipCode} {city}
