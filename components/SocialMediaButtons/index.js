@@ -3,6 +3,7 @@ import SVGinline from 'components/SVGinline'
 import style from './style.module.less'
 import facebook from '!svg-inline-loader!./facebook.svg'
 import twitter from '!svg-inline-loader!./twitter.svg'
+import instagram from '!svg-inline-loader!./instagram.svg'
 import { config } from 'config'
 import classNames from 'classnames'
 
@@ -12,6 +13,9 @@ function SocialMediaButtons({ className }) {
         <div className={classNames(className, style.container)}>
             <a href={config.facebook} className={style.link} target="_blank">
                 <SVGinline className={style.icon} svg={facebook} />
+            </a>
+            <a href={config.instagram} className={style.link} target="_blank">
+                <SVGinline className={style.icon} svg={instagram} />
             </a>
             <a href={config.twitter} className={style.link} target="_blank">
                 <SVGinline className={style.icon} svg={twitter} />
