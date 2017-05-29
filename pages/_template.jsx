@@ -13,11 +13,11 @@ const HOME_LINKS = [
         title: 'Theaterstück',
         to: 'beschreibung'
     }, {
-        title: 'Künstler',
-        to: 'artists'
-    }, {
         title: 'Tourplan',
         to: 'tour'
+    }, {
+        title: 'Künstler',
+        to: 'artists'
     }
 ]
 

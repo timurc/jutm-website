@@ -41,13 +41,13 @@ export default function Index({ route }) {
             <Section className={style.theaterstuck}title={theaterstuck.title}>
                 <SetInnerHTML body={theaterstuck.body} />
             </Section>
-            <span id="artists" />
-            <Section title="Die Künstler">
-                <Artists artists={artists} />
-            </Section>
             <span id="tour" />
             <Section title="Tour 2017">
                 <Tour dates={dates.data.dates} />
+            </Section>
+            <span id="artists" />
+            <Section title="Die Künstler">
+                <Artists artists={artists} />
             </Section>
         </div>
     )
