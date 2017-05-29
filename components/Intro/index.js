@@ -108,7 +108,7 @@ export default class Intro extends React.Component {
 class Fish extends React.Component {
     constructor(props) {
         super(props);
-        this.text = stripHTML(props.fish.body).split('');
+        this.text = typeof window === 'undefined' ? '' : stripHTML(props.fish.body).split('');
 
         this.state = {
             written: 0
