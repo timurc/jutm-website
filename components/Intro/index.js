@@ -108,17 +108,16 @@ export default class Intro extends React.Component {
 class Fish extends React.Component {
     constructor(props) {
         super(props);
+        this.text = stripHTML(props.fish.body).split('');
 
         this.state = {
-            text: '',
-            inView: typeof window === 'undefined'
+            written: 0
         };
     }
 
     componentWillReceiveProps(nextProps) {
         if (this.props.isActive !== nextProps.isActive) {
             if (nextProps.isActive) {
-                this.text = stripHTML(nextProps.fish.body).split('');
                 this.typeLetter(0)
             } else {
                 this.setState({
@@ -193,12 +192,6 @@ class Fish extends React.Component {
                 </div>
             </div>
         )
-    }
-}
-
-function isInView(el, scrollPosition, offset) {
-    if (el) {
-        return el.offsetTop < (scrollPosition + window.innerHeight + offset);
     }
 }
 
