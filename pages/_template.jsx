@@ -18,7 +18,11 @@ const HOME_LINKS = [
     }, {
         title: 'Künstler',
         to: 'artists'
+    }, {
+        title: 'Wissenschaftsjahr',
+        to: 'wissenschaftsjahr'
     }
+
 ]
 
 const BACK = [{title: 'Zurück', to: '/', pageLink: true}]

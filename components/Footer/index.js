@@ -14,7 +14,9 @@ function Navigation ({ wissenschaftsjahr, wid }) {
         <footer className={style.container}>
             <div className={style.inner}>
                 <div className={style.columns}>
-                    <SetInnerHTML body={wissenschaftsjahr.body} />
+                    <div id='wissenschaftsjahr'>
+                        <SetInnerHTML body={wissenschaftsjahr.body} />
+                    </div>
                     <SetInnerHTML body={wid.body} />
                 </div>
                 <div className={style.logos}>
