@@ -5,4 +5,4 @@ image: jule
 order: 3
 ---
 
-Tänzerin, arbeitet seit über zehn Jahren auf und hinter der Bühne: Die Tiefsee hat für mich etwas absolut Magisches mit ihrer Stille, den verborgenen Geheimnissen und den leuchtenden Farben ihrer Bewohner. 
+Tänzerin, arbeitet seit über zehn Jahren auf und hinter der Bühne: »Die Tiefsee hat für mich etwas absolut Magisches mit ihrer Stille, den verborgenen Geheimnissen und den leuchtenden Farben ihrer Bewohner.« 
