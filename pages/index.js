@@ -35,7 +35,7 @@ export default function Index({ route }) {
             />
             <BackgroundMagic />
             <Intro fishes={fishes}>
-                Komm mit auf eine wagemutige Expedition
+                Komm mit auf eine wagemutige Expedition!
             </Intro>
             <span id="beschreibung" />
             <Section className={style.theaterstuck}title={theaterstuck.title}>
