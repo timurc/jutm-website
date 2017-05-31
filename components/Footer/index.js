@@ -21,16 +21,22 @@ function Navigation ({ wissenschaftsjahr, wid }) {
                 </div>
                 <div className={style.logos}>
                     <div className={classNames(style.logo, style.logo_bmbf)}>
-                        <SVGinline svg={logoBMBF} className={style.logo_img} />
+                        <a href="https://www.bmbf.de/" target="_blank">
+                            <SVGinline svg={logoBMBF} className={style.logo_img} />
+                        </a>
                     </div>
                     <div className={style.logo}>
                         <h2 className={style.logo_heading}>
                             Ein Projekt von
                         </h2>
-                        <img src={logoWID} alt="Logo WID" className={classNames(style.logo_img, style.logo_img__wid)} />
+                        <a href="https://www.wissenschaft-im-dialog.de/" target="_blank">
+                            <img src={logoWID} alt="Logo WID" className={classNames(style.logo_img, style.logo_img__wid)} />
+                        </a>
                     </div>
                     <div className={classNames(style.logo, style.logo_wj)}>
-                        <SVGinline svg={logoWJ} className={style.logo_img} />
+                        <a href="https://www.wissenschaftsjahr.de/2016-17/" target="_blank">
+                            <SVGinline svg={logoWJ} className={style.logo_img} />
+                        </a>
                     </div>
                 </div>
                 <ul className={style.links}>
