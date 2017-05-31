@@ -6,7 +6,9 @@ import classNames from 'classnames'
 
 function WJlogo ({ svg, className }) {
     return (
-        <SVGinline svg={logo} className={classNames(className, style.container)}/>
+        <a href="https://www.wissenschaftsjahr.de/2016-17/" target="_blank">
+            <SVGinline svg={logo} className={classNames(className, style.container)}/>
+        </a>
     )
 }
 
