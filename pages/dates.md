@@ -90,7 +90,7 @@ dates:
     city: Wilhelmshaven
     venue: Wattenmeer Besucherzentrum
     venue2: UNESCO-Weltnaturerbe
-    street:  Südstrand 110 b 
+    street:  Südstrand 110b 
     zipCode: 26382
     link: http://www.wattenmeer-besucherzentrum.de/
     dates: 
