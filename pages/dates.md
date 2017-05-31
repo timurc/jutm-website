@@ -36,6 +36,7 @@ dates:
     venue: Multimar Wattforum 
     street: Dithmarscher Str. 6a 
     zipCode: 25832
+    link: http://www.multimar-wattforum.de/
     dates: 
       - 2017-07-09 12:00
       - 2017-07-09 15:00
@@ -46,6 +47,7 @@ dates:
     venue: Schlaues Haus
     street: Schlossplatz 16
     zipCode: 26122
+    link: http://schlaues-haus-ol.de/
     dates: 
       - 2017-07-18 10:00
       - 2017-07-18 15:00
@@ -56,7 +58,7 @@ dates:
     venue: Haus der Wissenschaft
     street: Sandstraße 4/5
     zipCode: 28195
-    link: http://www.hausderwissenschaft.org/
+    link: https://www.hausderwissenschaft.de/
     dates: 
       - 2017-07-25 16:00
       - 2017-07-26 11:00
@@ -67,6 +69,7 @@ dates:
     venue2: Nationalpark Vorpommersche Boddenlandschaft
     street: Seestraße 76
     zipCode: 18374
+    link: http://www.experimentarium-zingst.de/
     dates: 
       - 2017-08-08 11:00
       - 2017-08-08 14:00
@@ -77,6 +80,7 @@ dates:
     venue: Müritzeum
     street:  Zur Steinmole 1 
     zipCode: 17192
+    link: http://www.mueritzeum.de
     dates: 
       - 2017-08-11 11:00
       - 2017-08-12 14:00
@@ -88,6 +92,7 @@ dates:
     venue2: UNESCO-Weltnaturerbe
     street:  Südstrand 110 b 
     zipCode: 26382
+    link: http://www.wattenmeer-besucherzentrum.de/
     dates: 
       - 2017-08-17 09:00
       - 2017-08-18 14:00
@@ -99,6 +104,7 @@ dates:
     venue2: Ehem. Stadtbibliothek Bielefeld
     street:  Wilhelmstraße 3
     zipCode: 33602
+    link: http://www.geniale-bielefeld.de/
     dates: 
       - 2017-07-21 11:00
       - 2017-07-22 15:00
@@ -127,10 +133,11 @@ dates:
       - 2017-09-11 11:30
   - 
     city: Sassnitz
-    venue: Nationalpark Königsstuhl
-    venue2: Nationalpark Jasmund
+    venue: Nationalpark Jasmund
+    venue2: Nationalpark-Zentrum Königsstuhl
     street: Stubbenkammer 2
     zipCode: 18546
+    link: https://www.koenigsstuhl.com/
     dates: 
       - 2017-10-25 12:00
       - 2017-10-25 14:00
