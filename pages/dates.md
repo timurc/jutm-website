@@ -25,7 +25,7 @@ dates:
     venue: Phänomenta Flensburg
     street: Norderstraße 157-163
     zipCode: 24939
-    link: http://www.phaenomenta.com/
+    link: http://www.phaenomenta-flensburg.de/
     dates: 
       - 2017-07-07 10:15
       - 2017-07-07 12:00
