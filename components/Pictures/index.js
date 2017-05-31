@@ -14,7 +14,9 @@ function Pictures () {
             { map(IMAGES, (image, idx) => {
                 return (
                     <div className={style.image_container} key={idx}>
-                        <img src={image} className={style.image} />
+                        <div className={style.image_inner}>
+                            <img src={image} className={style.image} />
+                        </div>
                     </div>
                 )
                 })
