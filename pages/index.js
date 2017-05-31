@@ -8,6 +8,7 @@ import Intro from 'components/Intro'
 import SetInnerHTML from 'components/SetInnerHTML'
 import Section from 'components/Section'
 import Tour from 'components/Tour'
+import Pictures from 'components/Pictures'
 import Artists from 'components/Artists'
 import theaterstuck from './_texte/theaterstuck.md'
 import { filter, map, find, sortBy } from 'lodash'
@@ -40,6 +41,7 @@ export default function Index({ route }) {
             <span id="beschreibung" />
             <Section className={style.theaterstuck}title={theaterstuck.title}>
                 <SetInnerHTML body={theaterstuck.body} />
+                <Pictures />
             </Section>
             <span id="tour" />
             <Section title="Tour 2017">

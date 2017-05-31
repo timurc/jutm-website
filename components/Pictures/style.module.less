@@ -1,0 +1,21 @@
+@import '~style/vars';
+
+.container {
+    @media (min-width: @widthBreakXL) {
+        display: flex;
+        margin: 5rem -30vw 0;
+    }
+}
+
+.image {
+    width: 100%;
+}
+
+.image_container {
+    flex: 0 1 33%;
+    margin-bottom: 1rem;
+
+    @media (min-width: @widthBreakXL) {
+        margin: 2rem;
+    }
+}
