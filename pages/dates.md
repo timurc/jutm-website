@@ -7,7 +7,7 @@ dates:
     street: Kienitzer Str. 11
     zipCode: 12053
     dates: 
-      - 2017-06-23 21:30
+      - 2017-06-23 21:00
       - 2017-06-24 14:00
   - 
     city: Braunschweig
@@ -28,7 +28,7 @@ dates:
     link: http://www.phaenomenta-flensburg.de/
     dates: 
       - 2017-07-07 10:15
-      - 2017-07-07 12:00
+      - 2017-07-07 11:30
       - 2017-07-08 14:00
       - 2017-07-08 16:00
   - 

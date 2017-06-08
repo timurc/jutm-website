@@ -1,6 +1,6 @@
 ---
 name: Armin Mobasseri
-job: Author
+job: Autor
 order: 2
 image: armin
 ---
