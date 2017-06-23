@@ -48,7 +48,7 @@ function buildPiwikSetup() {
         _paq.push(['trackPageView']);
         _paq.push(['enableLinkTracking']);
         (function() {
-            var u="//www.wissenschaft-im-dialog.de/piwik/";
+            var u="https://www.wissenschaft-im-dialog.de/piwik/";
             _paq.push(['setTrackerUrl', u+'piwik.php']);
             _paq.push(['setSiteId', '16']);
             var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
