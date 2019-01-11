@@ -7,7 +7,7 @@ function Pictures() {
             <div className={style.container}>
                 <iframe
                     className={style.iframe}
-                    src="https://www.youtube.com/embed/TP5PAYMXk2o"
+                    src="https://www.youtube-nocookie.com/embed/TP5PAYMXk2o?rel=0&amp;showinfo=0"
                     frameBorder="0"
                     allowFullScreen
                 />
