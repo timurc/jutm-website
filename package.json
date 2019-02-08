@@ -33,5 +33,5 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "deploy-beta": "rsync -avzc --del public/ voellig@antares.uberspace.de:/var/www/virtual/voellig/jona.volligohne.de/",
     "deploy": "rsync -avzc --del public/ jona@vela.uberspace.de:/home/jona/html/"
- }
+  }
 }
