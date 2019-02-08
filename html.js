@@ -28,11 +28,11 @@ export default function HTML({ body }) {
                 {head.title.toComponent()}
                 {head.meta.toComponent()}
                 {css}
-                {process.env.NODE_ENV === 'production' ? piwikSetup : null}
+                {/* {process.env.NODE_ENV === 'production' ? piwikSetup : null} */}
             </head>
             <body>
                 <div id="react-mount" dangerouslySetInnerHTML={{ __html: body }} />
-                {/* <script src={prefixLink(`/bundle.js?t=${BUILD_TIME}`)} /> */}
+                <script src={prefixLink(`/bundle.js?t=${BUILD_TIME}`)} />
             </body>
         </html>
     );
