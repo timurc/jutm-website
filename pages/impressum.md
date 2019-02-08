@@ -2,6 +2,12 @@
 title: Impressum
 ---
 
+## DIESE WEBSITE IST ARCHIVIERT
+
+Sie wird aktuell betrieben von völlig ohne (siehe https://volligohne.de/kontakt/)
+
+Alle nachfolgenden Informationen beziehen sich auf den Status vor der Archivierung und sind nicht mehr aktuell:
+
 ## Herausgeber:
 
 Wissenschaft im Dialog gGmbH  

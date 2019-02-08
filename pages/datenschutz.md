@@ -2,6 +2,12 @@
 title: Datenschutz
 ---
 
+## DIESE WEBSITE IST ARCHIVIERT
+
+Sie wird aktuell betrieben von völlig ohne (siehe https://volligohne.de/kontakt/)
+
+Sie enthält gegenwärtig kein Tracking mehr. Die folgende Datenschutzerklärung bezieht sich somit auf den Stand vor der Archivierung:
+
 ## Datenschutzerklärung
 
 Die Veranstalter freuen sich über Ihren Besuch auf unseren Webseiten sowie über Ihr Interesse an unserem Projekt. Wir nehmen den Schutz Ihrer privaten Daten ernst und möchten, dass Sie sich beim Besuch unserer Internetseiten wohl fühlen. Der Schutz Ihrer Privatsphäre bei der Verarbeitung persönlicher Daten ist für uns ein wichtiges Anliegen, das wir bei unseren Geschäftsprozessen berücksichtigen. Wir verarbeiten persönliche Daten, die beim Besuch unserer Webseiten erhoben werden, gemäß den gesetzlichen Bestimmungen. Die Webseiten der Veranstalter können Links zu Webseiten anderer Anbieter enthalten, auf die sich diese Datenschutzerklärung nicht erstreckt.
