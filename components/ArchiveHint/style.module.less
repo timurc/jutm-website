@@ -1,0 +1,43 @@
+@d: 20px;
+
+.container {
+    position: fixed;
+    font-size: @d;
+    bottom: @d;
+    left: @d;
+    width: @d * 15;
+    padding: @d @d (@d * 3);
+    font-family: 'Courier New', Courier, monospace;
+    background: #f8f9f6;
+    z-index: 10;
+    background-image: url('components/ArchiveHint/sternchen.svg');
+    background-size: @d * 2;
+    background-position: center bottom @d;
+    background-repeat: no-repeat;
+
+    a {
+        color: inherit;
+    }
+
+    h1 {
+        margin: 0 0 @d;
+        font-size: inherit;
+    }
+}
+
+.button {
+    display: block;
+    margin-top: @d;
+    border: none;
+    font-size: inherit;
+    font-family: inherit;
+    padding: @d;
+    text-align: center;
+    background: white;
+    width: 100%;
+    cursor: pointer;
+
+    &:hover {
+        font-weight: bold;
+    }
+}
